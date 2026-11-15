@@ -1,0 +1,132 @@
+# Pipeline de pruebas automatizadas del caso practico de QA sobre NodeBB.
+#
+# Etapas:
+#   1. Instala NodeBB (nodebb/NodeBB) con MongoDB 7 como servicio.
+#   2. Pruebas unitarias: subconjunto de la suite Mocha del propio NodeBB, con cobertura (nyc).
+#   3. Arranca NodeBB y ejecuta las pruebas de API y E2E con Playwright (qa/automation).
+#   4. Prueba de carga corta con k6 (humo de rendimiento).
+#   5. Publica los reportes como artefactos descargables.
+name: QA - Pruebas automatizadas
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  NODEBB_DIR: nodebb/NodeBB
+  QA_DIR: qa/automation
+  BASE_URL: http://localhost:4567
+  NODEBB_ADMIN_USER: admin
+  NODEBB_ADMIN_PASSWORD: QaAdmin#2026x
+
+jobs:
+  qa:
+    name: Unitarias, API, E2E y carga
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+
+    services:
+      mongo:
+        image: mongo:7.0
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd "mongosh --eval 'db.runCommand({ ping: 1 })' --quiet"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Instalar dependencias de NodeBB
+        working-directory: ${{ env.NODEBB_DIR }}
+        run: |
+          cp install/package.json package.json
+          npm install --no-audit --no-fund
+
+      - name: Configurar NodeBB (instalacion no interactiva)
+        working-directory: ${{ env.NODEBB_DIR }}
+        env:
+          SETUP: >-
+            {
+              "url": "http://localhost:4567",
+              "secret": "qa-ci-secret",
+              "admin:username": "${{ env.NODEBB_ADMIN_USER }}",
+              "admin:email": "admin@example.org",
+              "admin:password": "${{ env.NODEBB_ADMIN_PASSWORD }}",
+              "admin:password:confirm": "${{ env.NODEBB_ADMIN_PASSWORD }}",
+              "database": "mongo",
+              "mongo:host": "127.0.0.1",
+              "mongo:port": 27017,
+              "mongo:username": "",
+              "mongo:password": "",
+              "mongo:database": "nodebb"
+            }
+          CI_DB: '{"host": "127.0.0.1", "port": 27017, "database": "ci_test"}'
+        run: node app --setup="${SETUP}" --ci="${CI_DB}"
+
+      - name: Pruebas unitarias (Mocha de NodeBB) con cobertura
+        working-directory: ${{ env.NODEBB_DIR }}
+        run: |
+          npx nyc --reporter=text-summary --reporter=lcov \
+            mocha --reporter spec test/utils.js test/password.js \
+            | tee unit-tests.log
+
+      - name: Arrancar NodeBB
+        working-directory: ${{ env.NODEBB_DIR }}
+        run: |
+          nohup node app.js > nodebb.log 2>&1 &
+          for i in $(seq 1 60); do
+            if curl -sf "${BASE_URL}/api/config" > /dev/null; then echo "NodeBB listo"; exit 0; fi
+            sleep 3
+          done
+          echo "NodeBB no arranco"; cat nodebb.log; exit 1
+
+      - name: Instalar Playwright
+        working-directory: ${{ env.QA_DIR }}
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+
+      - name: Pruebas de API y E2E (Playwright)
+        working-directory: ${{ env.QA_DIR }}
+        run: mkdir -p reports/evidencias && npx playwright test
+
+      - name: Instalar k6
+        if: always()
+        uses: grafana/setup-k6-action@v1
+
+      - name: Prueba de carga corta (k6)
+        if: always()
+        working-directory: ${{ env.QA_DIR }}
+        run: |
+          k6 run --summary-export=performance/resultados/resumen-k6-ci.json \
+            --stage 10s:5 --stage 20s:10 --stage 5s:0 \
+            performance/carga-k6.js
+
+      - name: Publicar reportes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reportes-qa
+          retention-days: 30
+          path: |
+            ${{ env.QA_DIR }}/reports/
+            ${{ env.QA_DIR }}/test-results/
+            ${{ env.QA_DIR }}/performance/resultados/
+            ${{ env.NODEBB_DIR }}/coverage/
+            ${{ env.NODEBB_DIR }}/unit-tests.log
+            ${{ env.NODEBB_DIR }}/nodebb.log
