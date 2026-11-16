@@ -59,6 +59,8 @@ El workflow `.github/workflows/qa-tests.yml` se ejecuta en cada push o pull requ
 
 Si cualquier prueba falla, el job queda en rojo y el commit se marca como fallido en GitHub.
 
+Primera ejecución: 16/11/2026, run #1 (commit 8a8e26b), estado Success en 3 min 26 s, con el artefacto `reportes-qa` publicado. Evidencia: `qa/automation/evidencias/EVI-AUT-09-github-actions.png`.
+
 # 7. Pruebas de rendimiento (resultados de k6)
 
 **Escenario:** `performance/carga-k6.js`. Subida de 0 a 5 usuarios virtuales en 20 s, luego a 20 en 30 s, 60 s sostenidos con 20 y bajada en 10 s. Cada usuario visita `/`, `/api/categories`, `/recent` y `/api/topic/:slug`, con 1 s de pausa.
