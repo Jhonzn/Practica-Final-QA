@@ -1,0 +1,228 @@
+{
+    "root_group": {
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {
+            "Pagina de inicio": {
+                "name": "Pagina de inicio",
+                "path": "::Pagina de inicio",
+                "id": "298dc623016818ca05a40df18a081ecb",
+                "groups": {},
+                "checks": {
+                        "inicio: estado 200": {
+                            "name": "inicio: estado 200",
+                            "path": "::Pagina de inicio::inicio: estado 200",
+                            "id": "e5d7f04305761ff95b6da40fa94a3498",
+                            "passes": 927,
+                            "fails": 0
+                        },
+                        "inicio: sin error 5xx": {
+                            "id": "a6ec63fd38fb5c780863b015da36de9d",
+                            "passes": 927,
+                            "fails": 0,
+                            "name": "inicio: sin error 5xx",
+                            "path": "::Pagina de inicio::inicio: sin error 5xx"
+                        }
+                    }
+            },
+            "API de categorias": {
+                "id": "e1747e25e9b901366cb9135121c2aef1",
+                "groups": {},
+                "checks": {
+                        "api-categorias: estado 200": {
+                            "name": "api-categorias: estado 200",
+                            "path": "::API de categorias::api-categorias: estado 200",
+                            "id": "41cdc579e1a0bc68189a05fae24727cc",
+                            "passes": 927,
+                            "fails": 0
+                        },
+                        "api-categorias: sin error 5xx": {
+                            "name": "api-categorias: sin error 5xx",
+                            "path": "::API de categorias::api-categorias: sin error 5xx",
+                            "id": "ab3f99a93c5d6ecaf2a38a41a9580ef3",
+                            "passes": 927,
+                            "fails": 0
+                        }
+                    },
+                "name": "API de categorias",
+                "path": "::API de categorias"
+            },
+            "Temas recientes": {
+                "name": "Temas recientes",
+                "path": "::Temas recientes",
+                "id": "f43376330c4a1ae39d3d1fcfd08a558c",
+                "groups": {},
+                "checks": {
+                        "recientes: estado 200": {
+                            "path": "::Temas recientes::recientes: estado 200",
+                            "id": "12c588061697549e4d1581dceed99d3a",
+                            "passes": 927,
+                            "fails": 0,
+                            "name": "recientes: estado 200"
+                        },
+                        "recientes: sin error 5xx": {
+                            "id": "49b707839f1e6c5d2d72a1aa7eaab596",
+                            "passes": 927,
+                            "fails": 0,
+                            "name": "recientes: sin error 5xx",
+                            "path": "::Temas recientes::recientes: sin error 5xx"
+                        }
+                    }
+            },
+            "Ver un tema": {
+                "name": "Ver un tema",
+                "path": "::Ver un tema",
+                "id": "42f3f4e9fe224977d56e1312a32b1bdd",
+                "groups": {},
+                "checks": {
+                        "api-tema: estado 200": {
+                            "path": "::Ver un tema::api-tema: estado 200",
+                            "id": "807513fc41a3c56127bdadfef1f1bd51",
+                            "passes": 927,
+                            "fails": 0,
+                            "name": "api-tema: estado 200"
+                        },
+                        "api-tema: sin error 5xx": {
+                            "name": "api-tema: sin error 5xx",
+                            "path": "::Ver un tema::api-tema: sin error 5xx",
+                            "id": "022f8bf70a37bc096a04a80c3d409694",
+                            "passes": 927,
+                            "fails": 0
+                        }
+                    }
+            }
+        },
+        "checks": {}
+    },
+    "metrics": {
+        "http_reqs": {
+            "count": 3709,
+            "rate": 30.836772157906257
+        },
+        "http_req_waiting": {
+            "med": 213.3521,
+            "max": 414.325,
+            "p(90)": 285.44410000000005,
+            "p(95)": 305.83882,
+            "avg": 193.44611221353426,
+            "min": 14.1421
+        },
+        "http_req_tls_handshaking": {
+            "avg": 0,
+            "min": 0,
+            "med": 0,
+            "max": 0,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "http_req_duration": {
+            "avg": 214.77733607441365,
+            "min": 15.4899,
+            "med": 239.0328,
+            "max": 442.3604,
+            "p(90)": 315.09838,
+            "p(95)": 333.95934,
+            "thresholds": {
+                "p(95)<3000": false
+            }
+        },
+        "vus": {
+            "min": 1,
+            "max": 20,
+            "value": 2
+        },
+        "vus_max": {
+            "value": 20,
+            "min": 20,
+            "max": 20
+        },
+        "group_duration": {
+            "min": 15.4899,
+            "med": 239.34205,
+            "max": 442.3604,
+            "p(90)": 315.7933100000001,
+            "p(95)": 334.5262299999998,
+            "avg": 215.22243597626758
+        },
+        "http_req_blocked": {
+            "med": 0,
+            "max": 27.4073,
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0.026939498517120516,
+            "min": 0
+        },
+        "http_req_sending": {
+            "med": 0,
+            "max": 3.0785,
+            "p(90)": 0,
+            "p(95)": 0.34761999999999954,
+            "avg": 0.038419493124831505,
+            "min": 0
+        },
+        "http_req_receiving": {
+            "avg": 21.292804367754133,
+            "min": 0,
+            "med": 21.3862,
+            "max": 80.7736,
+            "p(90)": 36.90342000000001,
+            "p(95)": 42.02536
+        },
+        "data_received": {
+            "count": 238183859,
+            "rate": 1980269.9896667213
+        },
+        "checks": {
+            "passes": 7416,
+            "fails": 0,
+            "thresholds": {
+                "rate>0.99": false
+            },
+            "value": 1
+        },
+        "iteration_duration": {
+            "avg": 1861.8536217907217,
+            "min": 1097.2259,
+            "med": 2000.2616,
+            "max": 2368.5451,
+            "p(90)": 2163.72546,
+            "p(95)": 2206.95016
+        },
+        "http_req_duration{expected_response:true}": {
+            "med": 239.0328,
+            "max": 442.3604,
+            "p(90)": 315.09838,
+            "p(95)": 333.95934,
+            "avg": 214.77733607441365,
+            "min": 15.4899
+        },
+        "iterations": {
+            "count": 927,
+            "rate": 7.707114529624993
+        },
+        "http_req_connecting": {
+            "med": 0,
+            "max": 6.5222,
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0.008844755998921542,
+            "min": 0
+        },
+        "data_sent": {
+            "count": 611396,
+            "rate": 5083.1704368442315
+        },
+        "http_req_failed": {
+            "passes": 0,
+            "fails": 3709,
+            "thresholds": {
+                "rate<0.01": false
+            },
+            "value": 0
+        }
+    },
+    "setup_data": {
+        "slug": "22/tema-e2e-playwright-1794853471684"
+    }
+}
