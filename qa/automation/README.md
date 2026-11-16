@@ -4,8 +4,8 @@ Pruebas de integración (API), de sistema (E2E en Chromium) y de carga (k6) para
 
 | Carpeta / archivo | Contenido |
 |---|---|
-| `tests/api/` | CA-01 a CA-05: API REST (`/api/config`, `/api/v3/topics`) con valores límite |
-| `tests/e2e/` | CA-06 a CA-10: login, registro, acceso a `/admin`, crear tema |
+| `tests/api/` | CP-A01 a CP-A05: API REST (`/api/config`, `/api/v3/topics`) con valores límite |
+| `tests/e2e/` | CP-A06 a CP-A10: login, registro, acceso a `/admin`, crear tema |
 | `tests/helpers.js` | Login por API e interfaz, token CSRF, creación de usuarios de prueba |
 | `performance/carga-k6.js` | Prueba de carga: hasta 20 usuarios virtuales durante unos 2 minutos |
 | `playwright.config.js` | Proyectos `api` y `e2e`, reportes HTML y JUnit, capturas automáticas |
@@ -45,10 +45,10 @@ Las capturas de evidencia quedan en `reports/evidencias/` y las de cada prueba d
 
 ## Notas de diseño
 
-- **Los administradores omiten los límites de título y contenido** (`src/topics/create.js`, condición `if (!isAdmin)`). Por eso CA-03 y CA-04 crean un usuario normal en cada ejecución.
+- **Los administradores omiten los límites de título y contenido** (`src/topics/create.js`, condición `if (!isAdmin)`). Por eso CP-A03 y CP-A04 crean un usuario normal en cada ejecución.
 - Un usuario nuevo debe esperar 10 s antes de su primera publicación (`initialPostDelay`) y sus publicaciones pasan por la cola de moderación (`postQueue`). Por eso la API responde **202** en lugar de 200; ambas respuestas indican que la validación fue superada.
 - El registro tiene un paso intermedio (`/register/complete`) con el correo opcional y los consentimientos de GDPR.
-- CA-07 usa un usuario inexistente para no bloquear al administrador (5 intentos fallidos = 60 minutos de bloqueo).
+- CP-A07 usa un usuario inexistente para no bloquear al administrador (5 intentos fallidos = 60 minutos de bloqueo).
 - Las pruebas corren en serie (`workers: 1`) por los límites de frecuencia de NodeBB.
 - **Bloqueo por IP:** NodeBB cuenta todos los inicios de sesión desde una misma IP, también los exitosos. Con más de 20 por hora (`ipLoginAttempts`), la IP queda bloqueada 1 hora ("Your IP has been temporarily locked"). Cada ejecución completa hace unos 9 inicios de sesión, así que se puede correr la suite unas 2 veces por hora. Si aparece el bloqueo, hay dos opciones:
   - En el ambiente de pruebas, subir el valor en *Admin → Settings → User → IP login attempts*.

@@ -1,9 +1,9 @@
-// CA-01 y CA-02: pruebas de integracion de la API REST de NodeBB.
+// CP-A01 y CP-A02: pruebas de integracion de la API REST de NodeBB.
 const { test, expect } = require('@playwright/test');
 const { firstCategoryId } = require('../helpers');
 
 test.describe('API publica y control de acceso', () => {
-  test('CA-01 | GET /api/config devuelve la configuracion publica con los limites esperados (RF12)', async ({ request }) => {
+  test('CP-A01 | GET /api/config devuelve la configuracion publica con los limites esperados (RF12)', async ({ request }) => {
     const inicio = Date.now();
     const res = await request.get('/api/config');
     const duracion = Date.now() - inicio;
@@ -23,7 +23,7 @@ test.describe('API publica y control de acceso', () => {
     expect(duracion).toBeLessThan(3000);
   });
 
-  test('CA-02 | POST /api/v3/topics sin autenticacion es rechazado y no crea el tema (RF12, RNF05)', async ({ request }) => {
+  test('CP-A02 | POST /api/v3/topics sin autenticacion es rechazado y no crea el tema (RF12, RNF05)', async ({ request }) => {
     const cid = await firstCategoryId(request);
     const titulo = `Tema sin sesion ${Date.now()}`;
 

@@ -1,4 +1,4 @@
-// CA-08: valores limite de la longitud del nombre de usuario en el registro (RF01).
+// CP-A08: valores limite de la longitud del nombre de usuario en el registro (RF01).
 // Limites de NodeBB: minimo 2 y maximo 16 caracteres (install/data/defaults.json).
 const { test, expect } = require('@playwright/test');
 
@@ -13,19 +13,19 @@ test.describe('Registro de usuarios', () => {
     await campo.blur(); // NodeBB valida el campo al perder el foco
   }
 
-  test('CA-08a | Usuario de 1 caracter (debajo del minimo) muestra error', async ({ page }) => {
+  test('CP-A08a | Usuario de 1 caracter (debajo del minimo) muestra error', async ({ page }) => {
     await validarUsuario(page, 'a');
     await expect(page.locator('#username-notify')).not.toBeEmpty();
-    await page.screenshot({ path: 'reports/evidencias/CA-08a-usuario-1-caracter.png' });
+    await page.screenshot({ path: 'reports/evidencias/CP-A08a-usuario-1-caracter.png' });
   });
 
-  test('CA-08b | Usuario de 17 caracteres (encima del maximo) muestra error', async ({ page }) => {
+  test('CP-A08b | Usuario de 17 caracteres (encima del maximo) muestra error', async ({ page }) => {
     await validarUsuario(page, 'a'.repeat(17));
     await expect(page.locator('#username-notify')).not.toBeEmpty();
-    await page.screenshot({ path: 'reports/evidencias/CA-08b-usuario-17-caracteres.png' });
+    await page.screenshot({ path: 'reports/evidencias/CP-A08b-usuario-17-caracteres.png' });
   });
 
-  test('CA-08c | Usuario valido de 16 caracteres permite completar el registro', async ({ page }) => {
+  test('CP-A08c | Usuario valido de 16 caracteres permite completar el registro', async ({ page }) => {
     const usuario = `qa${Date.now()}`.slice(0, 16).padEnd(16, 'x');
     expect(usuario).toHaveLength(16);
     await validarUsuario(page, usuario);
@@ -44,6 +44,6 @@ test.describe('Registro de usuarios', () => {
     await page.locator('main form button.btn-primary').click();
 
     await expect.poll(() => page.evaluate(() => window.app && window.app.user && window.app.user.uid)).toBeGreaterThan(0);
-    await page.screenshot({ path: 'reports/evidencias/CA-08c-registro-exitoso.png', fullPage: true });
+    await page.screenshot({ path: 'reports/evidencias/CP-A08c-registro-exitoso.png', fullPage: true });
   });
 });
