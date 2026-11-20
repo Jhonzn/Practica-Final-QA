@@ -1,0 +1,72 @@
+{
+  "fecha": "2026-11-20T04:11:21.505Z",
+  "base": "http://localhost:4567",
+  "cid": 1,
+  "temaAdmin": 2,
+  "filas": [
+    {
+      "id": "CA-01",
+      "actor": "Visitante",
+      "accion": "Responder un tema (POST /api/v3/topics/:tid)",
+      "http": 403,
+      "efecto": "sin efecto",
+      "estado": "Aprobado"
+    },
+    {
+      "id": "CA-02",
+      "actor": "Visitante",
+      "accion": "Abrir la API del panel (GET /api/admin/manage/users)",
+      "http": 401,
+      "efecto": "no verificado",
+      "estado": "Aprobado"
+    },
+    {
+      "id": "CA-03",
+      "actor": "Usuario sin privilegios",
+      "accion": "Abrir la API del panel (GET /api/admin/manage/users)",
+      "http": 403,
+      "efecto": "no verificado",
+      "estado": "Aprobado"
+    },
+    {
+      "id": "CA-04",
+      "actor": "Usuario sin privilegios",
+      "accion": "Cambiar un ajuste del foro (PUT /api/v3/admin/settings/postQueue)",
+      "http": 403,
+      "efecto": "sin efecto",
+      "estado": "Aprobado"
+    },
+    {
+      "id": "CA-05",
+      "actor": "Usuario sin privilegios",
+      "accion": "Editar el perfil de otro usuario (PUT /api/v3/users/:uid)",
+      "http": 403,
+      "efecto": "sin efecto",
+      "estado": "Aprobado"
+    },
+    {
+      "id": "CA-06",
+      "actor": "Usuario sin privilegios",
+      "accion": "Eliminar un tema ajeno (DELETE /api/v3/topics/:tid)",
+      "http": 403,
+      "efecto": "sin efecto",
+      "estado": "Aprobado"
+    },
+    {
+      "id": "CA-07",
+      "actor": "Usuario sin privilegios",
+      "accion": "Crear un usuario (POST /api/v3/users)",
+      "http": 403,
+      "efecto": "sin efecto",
+      "estado": "Aprobado"
+    },
+    {
+      "id": "CA-08",
+      "actor": "Usuario sin privilegios",
+      "accion": "Crear una categoría (POST /api/v3/categories)",
+      "http": 403,
+      "efecto": "sin efecto",
+      "estado": "Aprobado"
+    }
+  ]
+}
