@@ -1,0 +1,218 @@
+[
+  {
+    "regla": "javascript:S5689",
+    "severidad": "MINOR",
+    "archivo": "install/web.js",
+    "linea": 22,
+    "mensaje": "This framework implicitly discloses version information by default. Make sure it is safe here.",
+    "esfuerzo": "5min"
+  },
+  {
+    "regla": "javascript:S4036",
+    "severidad": "MINOR",
+    "archivo": "install/web.js",
+    "linea": 234,
+    "mensaje": "Make sure the \"PATH\" variable only contains fixed, unwriteable directories.",
+    "esfuerzo": "15min"
+  },
+  {
+    "regla": "javascript:S1523",
+    "severidad": "CRITICAL",
+    "archivo": "public/src/ajaxify.js",
+    "linea": 503,
+    "mensaje": "Make sure that this dynamic injection or execution of code is safe.",
+    "esfuerzo": "30min"
+  },
+  {
+    "regla": "javascript:S1523",
+    "severidad": "CRITICAL",
+    "archivo": "public/src/ajaxify.js",
+    "linea": 505,
+    "mensaje": "Make sure that this dynamic injection or execution of code is safe.",
+    "esfuerzo": "30min"
+  },
+  {
+    "regla": "javascript:S5332",
+    "severidad": "MINOR",
+    "archivo": "public/src/utils.common.js",
+    "linea": 623,
+    "mensaje": "Using http protocol is insecure. Use https instead.",
+    "esfuerzo": "30min"
+  },
+  {
+    "regla": "javascript:S4790",
+    "severidad": "CRITICAL",
+    "archivo": "src/activitypub/mocks.js",
+    "linea": 10,
+    "mensaje": "Make sure this weak hash algorithm is not used in a sensitive context here.",
+    "esfuerzo": "30min"
+  },
+  {
+    "regla": "javascript:S5852",
+    "severidad": "CRITICAL",
+    "archivo": "src/admin/search.js",
+    "linea": 50,
+    "mensaje": "Fix this regular expression that is vulnerable to exponential backtracking, as it can lead to denial of service.",
+    "esfuerzo": "30min"
+  },
+  {
+    "regla": "javascript:S4036",
+    "severidad": "MINOR",
+    "archivo": "src/cli/manage.js",
+    "linea": 152,
+    "mensaje": "Make sure the \"PATH\" variable only contains fixed, unwriteable directories.",
+    "esfuerzo": "15min"
+  },
+  {
+    "regla": "javascript:S4036",
+    "severidad": "MINOR",
+    "archivo": "src/cli/running.js",
+    "linea": 63,
+    "mensaje": "Make sure the \"PATH\" variable only contains fixed, unwriteable directories.",
+    "esfuerzo": "15min"
+  },
+  {
+    "regla": "javascript:S4036",
+    "severidad": "MINOR",
+    "archivo": "src/cli/running.js",
+    "linea": 115,
+    "mensaje": "Make sure the \"PATH\" variable only contains fixed, unwriteable directories.",
+    "esfuerzo": "15min"
+  },
+  {
+    "regla": "javascript:S5332",
+    "severidad": "MINOR",
+    "archivo": "src/controllers/home.js",
+    "linea": 33,
+    "mensaje": "Using http protocol is insecure. Use https instead.",
+    "esfuerzo": "30min"
+  },
+  {
+    "regla": "javascript:S5332",
+    "severidad": "MINOR",
+    "archivo": "src/controllers/osd.js",
+    "linea": 23,
+    "mensaje": "Using http protocol is insecure. Use https instead.",
+    "esfuerzo": "30min"
+  },
+  {
+    "regla": "javascript:S5332",
+    "severidad": "MINOR",
+    "archivo": "src/controllers/well-known.js",
+    "linea": 77,
+    "mensaje": "Using http protocol is insecure. Use https instead.",
+    "esfuerzo": "30min"
+  },
+  {
+    "regla": "javascript:S4790",
+    "severidad": "CRITICAL",
+    "archivo": "src/controllers/write/users.js",
+    "linea": 212,
+    "mensaje": "Make sure this weak hash algorithm is not used in a sensitive context here.",
+    "esfuerzo": "30min"
+  },
+  {
+    "regla": "javascript:S5332",
+    "severidad": "MINOR",
+    "archivo": "src/emailer.js",
+    "linea": 32,
+    "mensaje": "Using http protocol is insecure. Use https instead.",
+    "esfuerzo": "30min"
+  },
+  {
+    "regla": "javascript:S5332",
+    "severidad": "MINOR",
+    "archivo": "src/emailer.js",
+    "linea": 168,
+    "mensaje": "Using http protocol is insecure. Use https instead.",
+    "esfuerzo": "30min"
+  },
+  {
+    "regla": "javascript:S4790",
+    "severidad": "CRITICAL",
+    "archivo": "src/image.js",
+    "linea": 168,
+    "mensaje": "Make sure this weak hash algorithm is not used in a sensitive context here.",
+    "esfuerzo": "30min"
+  },
+  {
+    "regla": "javascript:S2598",
+    "severidad": "CRITICAL",
+    "archivo": "src/middleware/multer.js",
+    "linea": 11,
+    "mensaje": "Restrict folder destination of uploaded files.",
+    "esfuerzo": "20min"
+  },
+  {
+    "regla": "javascript:S4790",
+    "severidad": "CRITICAL",
+    "archivo": "src/posts/uploads.js",
+    "linea": 23,
+    "mensaje": "Make sure this weak hash algorithm is not used in a sensitive context here.",
+    "esfuerzo": "30min"
+  },
+  {
+    "regla": "javascript:S5332",
+    "severidad": "MINOR",
+    "archivo": "src/routes/well-known.js",
+    "linea": 22,
+    "mensaje": "Using http protocol is insecure. Use https instead.",
+    "esfuerzo": "30min"
+  },
+  {
+    "regla": "javascript:S4790",
+    "severidad": "CRITICAL",
+    "archivo": "src/upgrades/1.10.0/hash_recent_ip_addresses.js",
+    "linea": 26,
+    "mensaje": "Make sure this weak hash algorithm is not used in a sensitive context here.",
+    "esfuerzo": "30min"
+  },
+  {
+    "regla": "javascript:S4790",
+    "severidad": "CRITICAL",
+    "archivo": "src/upgrades/1.19.3/fix_user_uploads_zset.js",
+    "linea": 8,
+    "mensaje": "Make sure this weak hash algorithm is not used in a sensitive context here.",
+    "esfuerzo": "30min"
+  },
+  {
+    "regla": "javascript:S4790",
+    "severidad": "CRITICAL",
+    "archivo": "src/upgrades/1.19.3/rename_post_upload_hashes.js",
+    "linea": 10,
+    "mensaje": "Make sure this weak hash algorithm is not used in a sensitive context here.",
+    "esfuerzo": "30min"
+  },
+  {
+    "regla": "javascript:S4790",
+    "severidad": "CRITICAL",
+    "archivo": "src/upgrades/1.6.0/clear-stale-digest-template.js",
+    "linea": 16,
+    "mensaje": "Make sure this weak hash algorithm is not used in a sensitive context here.",
+    "esfuerzo": "30min"
+  },
+  {
+    "regla": "javascript:S4790",
+    "severidad": "CRITICAL",
+    "archivo": "src/upgrades/4.3.0/normalize_thumbs_uploads.js",
+    "linea": 28,
+    "mensaje": "Make sure this weak hash algorithm is not used in a sensitive context here.",
+    "esfuerzo": "30min"
+  },
+  {
+    "regla": "javascript:S4790",
+    "severidad": "CRITICAL",
+    "archivo": "src/user/uploads.js",
+    "linea": 12,
+    "mensaje": "Make sure this weak hash algorithm is not used in a sensitive context here.",
+    "esfuerzo": "30min"
+  },
+  {
+    "regla": "javascript:S2612",
+    "severidad": "MAJOR",
+    "archivo": "src/webserver.js",
+    "linea": 340,
+    "mensaje": "Make sure this permission is safe.",
+    "esfuerzo": "5min"
+  }
+]

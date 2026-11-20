@@ -1,0 +1,1020 @@
+{
+  "fecha_exportacion": "2026-11-20T02:55:03.096Z",
+  "sonarqube": "26.11.0.134175",
+  "proyecto": "nodebb",
+  "analisis": [
+    {
+      "fecha": "2026-11-20T02:46:28+0000",
+      "version": "4.16.7"
+    }
+  ],
+  "quality_gate": {
+    "status": "OK",
+    "conditions": [],
+    "ignoredConditions": false,
+    "caycStatus": "compliant"
+  },
+  "medidas": {
+    "complexity": "26603",
+    "duplicated_lines_density": "1.4",
+    "duplicated_lines": "1601",
+    "software_quality_security_rating": "4.0",
+    "functions": "11109",
+    "classes": "1",
+    "software_quality_security_issues": "27",
+    "sqale_index": "2604",
+    "sqale_rating": "1.0",
+    "bugs": "608",
+    "lines_to_cover": "55926",
+    "software_quality_reliability_issues": "1631",
+    "branch_coverage": "5.8",
+    "duplicated_files": "44",
+    "ncloc": "96492",
+    "software_quality_reliability_rating": "5.0",
+    "line_coverage": "15.1",
+    "lines": "115811",
+    "coverage": "12.7",
+    "reliability_rating": "5.0",
+    "code_smells": "1026",
+    "security_rating": "4.0",
+    "sqale_debt_ratio": "0.1",
+    "comment_lines_density": "2.9",
+    "security_hotspots": "0",
+    "security_review_rating": "1.0",
+    "alert_status": "OK",
+    "uncovered_lines": "47509",
+    "cognitive_complexity": "18439",
+    "duplicated_blocks": "81",
+    "software_quality_maintainability_issues": "1002",
+    "files": "837",
+    "vulnerabilities": "27",
+    "software_quality_maintainability_rating": "1.0"
+  },
+  "calificaciones": {
+    "reliability": "E",
+    "security": "D",
+    "maintainability": "A",
+    "security_review": "A"
+  },
+  "desglose": {
+    "BUG": {
+      "severities": [
+        [
+          "MAJOR",
+          585
+        ],
+        [
+          "CRITICAL",
+          20
+        ],
+        [
+          "BLOCKER",
+          3
+        ]
+      ],
+      "directories": [
+        [
+          "src/controllers/write",
+          205
+        ],
+        [
+          "src/api",
+          43
+        ],
+        [
+          "public/src/modules",
+          23
+        ],
+        [
+          "src/topics",
+          23
+        ],
+        [
+          "src/posts",
+          19
+        ],
+        [
+          "src",
+          18
+        ],
+        [
+          "public/src/client",
+          15
+        ],
+        [
+          "src/user",
+          15
+        ],
+        [
+          "src/cli",
+          14
+        ],
+        [
+          "src/controllers/accounts",
+          13
+        ],
+        [
+          "src/groups",
+          12
+        ],
+        [
+          "public/src/client/topic",
+          11
+        ],
+        [
+          "src/controllers",
+          11
+        ],
+        [
+          "src/messaging",
+          11
+        ],
+        [
+          "src/socket.io",
+          10
+        ],
+        [
+          "/",
+          9
+        ],
+        [
+          "public/src/client/chats",
+          9
+        ],
+        [
+          "src/activitypub",
+          9
+        ],
+        [
+          "src/middleware",
+          9
+        ],
+        [
+          "public/src/admin/federation",
+          7
+        ],
+        [
+          "public/src/admin/manage",
+          7
+        ],
+        [
+          "public/src/client/header",
+          7
+        ],
+        [
+          "public/src/admin/extend",
+          6
+        ],
+        [
+          "public/src/admin/modules",
+          6
+        ],
+        [
+          "src/privileges",
+          6
+        ],
+        [
+          "public/src/client/groups",
+          5
+        ],
+        [
+          "public/src/modules/accounts",
+          5
+        ],
+        [
+          "public/src/admin/dashboard",
+          4
+        ],
+        [
+          "src/categories",
+          4
+        ],
+        [
+          "src/routes",
+          4
+        ],
+        [
+          "src/upgrades/1.0.0",
+          4
+        ],
+        [
+          "public/src/admin/appearance",
+          3
+        ],
+        [
+          "public/src/modules/settings",
+          3
+        ],
+        [
+          "src/controllers/admin",
+          3
+        ],
+        [
+          "src/upgrades/1.1.0",
+          3
+        ],
+        [
+          "src/upgrades/1.1.1",
+          3
+        ],
+        [
+          "src/upgrades/1.5.2",
+          3
+        ],
+        [
+          "public/src/admin",
+          2
+        ],
+        [
+          "public/src/client/flags",
+          2
+        ],
+        [
+          "src/controllers/activitypub",
+          2
+        ],
+        [
+          "src/database",
+          2
+        ],
+        [
+          "src/database/redis",
+          2
+        ],
+        [
+          "src/meta",
+          2
+        ],
+        [
+          "src/socket.io/user",
+          2
+        ],
+        [
+          "src/upgrades/1.10.0",
+          2
+        ],
+        [
+          "src/upgrades/1.4.4",
+          2
+        ],
+        [
+          "src/upgrades/1.5.0",
+          2
+        ],
+        [
+          "src/upgrades/1.5.1",
+          2
+        ],
+        [
+          "src/upgrades/1.6.0",
+          2
+        ],
+        [
+          "src/upgrades/1.7.4",
+          2
+        ],
+        [
+          "src/upgrades/1.8.0",
+          2
+        ],
+        [
+          "install",
+          1
+        ],
+        [
+          "public/src",
+          1
+        ],
+        [
+          "public/src/admin/settings",
+          1
+        ],
+        [
+          "public/src/client/account",
+          1
+        ],
+        [
+          "public/src/installer",
+          1
+        ],
+        [
+          "src/database/mongo",
+          1
+        ],
+        [
+          "src/database/postgres",
+          1
+        ],
+        [
+          "src/plugins",
+          1
+        ],
+        [
+          "src/routes/write",
+          1
+        ],
+        [
+          "src/socket.io/admin",
+          1
+        ],
+        [
+          "src/upgrades/1.10.2",
+          1
+        ],
+        [
+          "src/upgrades/1.11.1",
+          1
+        ],
+        [
+          "src/upgrades/1.12.0",
+          1
+        ],
+        [
+          "src/upgrades/1.3.0",
+          1
+        ],
+        [
+          "src/upgrades/1.4.0",
+          1
+        ],
+        [
+          "src/upgrades/1.7.0",
+          1
+        ],
+        [
+          "src/upgrades/3.1.0",
+          1
+        ],
+        [
+          "src/upgrades/4.0.0",
+          1
+        ]
+      ],
+      "rules": [
+        [
+          "javascript:S9383",
+          572
+        ],
+        [
+          "javascript:S930",
+          18
+        ],
+        [
+          "javascript:S2189",
+          3
+        ],
+        [
+          "javascript:S1848",
+          3
+        ],
+        [
+          "javascript:S905",
+          2
+        ],
+        [
+          "javascript:S2871",
+          2
+        ],
+        [
+          "javascript:S7727",
+          2
+        ],
+        [
+          "javascript:S3403",
+          2
+        ],
+        [
+          "javascript:S3699",
+          1
+        ],
+        [
+          "javascript:S6959",
+          1
+        ],
+        [
+          "javascript:S2201",
+          1
+        ],
+        [
+          "javascript:S1764",
+          1
+        ]
+      ]
+    },
+    "VULNERABILITY": {
+      "severities": [
+        [
+          "CRITICAL",
+          14
+        ],
+        [
+          "MINOR",
+          12
+        ],
+        [
+          "MAJOR",
+          1
+        ]
+      ],
+      "directories": [
+        [
+          "src",
+          4
+        ],
+        [
+          "public/src",
+          3
+        ],
+        [
+          "src/cli",
+          3
+        ],
+        [
+          "src/controllers",
+          3
+        ],
+        [
+          "install",
+          2
+        ],
+        [
+          "src/upgrades/1.19.3",
+          2
+        ],
+        [
+          "src/activitypub",
+          1
+        ],
+        [
+          "src/admin",
+          1
+        ],
+        [
+          "src/controllers/write",
+          1
+        ],
+        [
+          "src/middleware",
+          1
+        ],
+        [
+          "src/posts",
+          1
+        ],
+        [
+          "src/routes",
+          1
+        ],
+        [
+          "src/upgrades/1.10.0",
+          1
+        ],
+        [
+          "src/upgrades/1.6.0",
+          1
+        ],
+        [
+          "src/upgrades/4.3.0",
+          1
+        ],
+        [
+          "src/user",
+          1
+        ]
+      ],
+      "rules": [
+        [
+          "javascript:S4790",
+          10
+        ],
+        [
+          "javascript:S5332",
+          7
+        ],
+        [
+          "javascript:S4036",
+          4
+        ],
+        [
+          "javascript:S1523",
+          2
+        ],
+        [
+          "javascript:S5689",
+          1
+        ],
+        [
+          "javascript:S2612",
+          1
+        ],
+        [
+          "javascript:S2598",
+          1
+        ],
+        [
+          "javascript:S5852",
+          1
+        ]
+      ]
+    },
+    "CODE_SMELL": {
+      "severities": [
+        [
+          "MINOR",
+          982
+        ],
+        [
+          "MAJOR",
+          41
+        ],
+        [
+          "BLOCKER",
+          3
+        ]
+      ],
+      "directories": [
+        [
+          "src/user",
+          94
+        ],
+        [
+          "public/src/modules",
+          85
+        ],
+        [
+          "src/topics",
+          66
+        ],
+        [
+          "src/api",
+          58
+        ],
+        [
+          "src",
+          56
+        ],
+        [
+          "src/messaging",
+          47
+        ],
+        [
+          "src/controllers",
+          40
+        ],
+        [
+          "src/posts",
+          39
+        ],
+        [
+          "src/activitypub",
+          38
+        ],
+        [
+          "src/controllers/admin",
+          28
+        ],
+        [
+          "public/src/client/topic",
+          27
+        ],
+        [
+          "public/src/client/chats",
+          25
+        ],
+        [
+          "src/database/postgres",
+          25
+        ],
+        [
+          "public/src/client",
+          24
+        ],
+        [
+          "public/src",
+          23
+        ],
+        [
+          "src/groups",
+          21
+        ],
+        [
+          "public/src/admin/manage",
+          20
+        ],
+        [
+          "src/privileges",
+          19
+        ],
+        [
+          "src/controllers/accounts",
+          16
+        ],
+        [
+          "src/controllers/write",
+          16
+        ],
+        [
+          "src/meta",
+          16
+        ],
+        [
+          "src/categories",
+          14
+        ],
+        [
+          "test",
+          13
+        ],
+        [
+          "src/controllers/activitypub",
+          12
+        ],
+        [
+          "src/database/mongo",
+          12
+        ],
+        [
+          "src/routes",
+          12
+        ],
+        [
+          "src/database/redis",
+          11
+        ],
+        [
+          "public/src/client/account",
+          9
+        ],
+        [
+          "src/middleware",
+          9
+        ],
+        [
+          "public/src/client/header",
+          7
+        ],
+        [
+          "src/database/postgres/sorted",
+          7
+        ],
+        [
+          "src/socket.io",
+          7
+        ],
+        [
+          "src/upgrades/1.0.0",
+          7
+        ],
+        [
+          "src/database/mongo/sorted",
+          6
+        ],
+        [
+          "src/socket.io/admin",
+          6
+        ],
+        [
+          "src/upgrades/1.1.0",
+          6
+        ],
+        [
+          "src/socket.io/topics",
+          5
+        ],
+        [
+          "src/upgrades/1.10.2",
+          5
+        ],
+        [
+          "src/upgrades/1.13.0",
+          5
+        ],
+        [
+          "src/upgrades/1.7.4",
+          5
+        ],
+        [
+          "public/src/admin",
+          4
+        ],
+        [
+          "public/src/admin/advanced",
+          4
+        ],
+        [
+          "public/src/admin/federation",
+          4
+        ],
+        [
+          "public/src/admin/settings",
+          4
+        ],
+        [
+          "public/src/client/account/edit",
+          4
+        ],
+        [
+          "public/src/modules/accounts",
+          4
+        ],
+        [
+          "src/cache",
+          4
+        ],
+        [
+          "public/src/client/groups",
+          3
+        ],
+        [
+          "src/cli",
+          3
+        ],
+        [
+          "src/upgrades/1.12.0",
+          3
+        ],
+        [
+          "src/upgrades/1.7.3",
+          3
+        ],
+        [
+          "src/upgrades/1.7.6",
+          3
+        ],
+        [
+          "public/src/client/flags",
+          2
+        ],
+        [
+          "public/src/installer",
+          2
+        ],
+        [
+          "src/admin",
+          2
+        ],
+        [
+          "src/rewards",
+          2
+        ],
+        [
+          "src/upgrades/1.10.0",
+          2
+        ],
+        [
+          "src/upgrades/1.14.1",
+          2
+        ],
+        [
+          "src/upgrades/1.15.0",
+          2
+        ],
+        [
+          "src/upgrades/1.3.0",
+          2
+        ],
+        [
+          "src/upgrades/1.5.0",
+          2
+        ],
+        [
+          "src/upgrades/1.7.1",
+          2
+        ],
+        [
+          "src/upgrades/3.3.0",
+          2
+        ],
+        [
+          "public/src/admin/extend",
+          1
+        ],
+        [
+          "public/src/client/category",
+          1
+        ],
+        [
+          "public/src/modules/settings",
+          1
+        ],
+        [
+          "src/database",
+          1
+        ],
+        [
+          "src/navigation",
+          1
+        ],
+        [
+          "src/plugins",
+          1
+        ],
+        [
+          "src/routes/write",
+          1
+        ],
+        [
+          "src/socket.io/posts",
+          1
+        ],
+        [
+          "src/upgrades/1.1.1",
+          1
+        ],
+        [
+          "src/upgrades/1.13.3",
+          1
+        ],
+        [
+          "src/upgrades/1.13.4",
+          1
+        ],
+        [
+          "src/upgrades/1.15.4",
+          1
+        ],
+        [
+          "src/upgrades/1.16.0",
+          1
+        ],
+        [
+          "src/upgrades/1.4.0",
+          1
+        ],
+        [
+          "src/upgrades/3.11.0",
+          1
+        ],
+        [
+          "src/upgrades/3.8.0",
+          1
+        ],
+        [
+          "src/upgrades/3.8.2",
+          1
+        ],
+        [
+          "src/upgrades/3.8.3",
+          1
+        ],
+        [
+          "src/upgrades/4.12.0",
+          1
+        ],
+        [
+          "src/upgrades/4.3.0",
+          1
+        ]
+      ],
+      "rules": [
+        [
+          "javascript:S7773",
+          981
+        ],
+        [
+          "javascript:S8786",
+          28
+        ],
+        [
+          "javascript:S8784",
+          13
+        ],
+        [
+          "javascript:S3516",
+          3
+        ],
+        [
+          "javascript:S7737",
+          1
+        ]
+      ]
+    }
+  },
+  "reglas": {
+    "javascript:S9383": {
+      "nombre": "Promises should not be left unhandled",
+      "tipo": "BUG",
+      "severidad": "MAJOR"
+    },
+    "javascript:S930": {
+      "nombre": "Function calls should not pass extra arguments",
+      "tipo": "BUG",
+      "severidad": "CRITICAL"
+    },
+    "javascript:S2189": {
+      "nombre": "Loops should not be infinite",
+      "tipo": "BUG",
+      "severidad": "BLOCKER"
+    },
+    "javascript:S1848": {
+      "nombre": "Objects should not be created to be dropped immediately without being used",
+      "tipo": "BUG",
+      "severidad": "MAJOR"
+    },
+    "javascript:S905": {
+      "nombre": "Non-empty statements should change control flow or have at least one side-effect",
+      "tipo": "BUG",
+      "severidad": "MAJOR"
+    },
+    "javascript:S2871": {
+      "nombre": "\"Array.prototype.sort()\" and \"Array.prototype.toSorted()\" should use a compare function",
+      "tipo": "BUG",
+      "severidad": "CRITICAL"
+    },
+    "javascript:S7727": {
+      "nombre": "Function references should not be passed directly to iterator methods",
+      "tipo": "BUG",
+      "severidad": "MAJOR"
+    },
+    "javascript:S3403": {
+      "nombre": "Strict equality operators should not be used with dissimilar types",
+      "tipo": "BUG",
+      "severidad": "MAJOR"
+    },
+    "javascript:S3699": {
+      "nombre": "The return value of void functions should not be used",
+      "tipo": "BUG",
+      "severidad": "MAJOR"
+    },
+    "javascript:S6959": {
+      "nombre": "\"Array.reduce()\" calls should include an initial value",
+      "tipo": "BUG",
+      "severidad": "MAJOR"
+    },
+    "javascript:S2201": {
+      "nombre": "Return values from functions without side effects should not be ignored",
+      "tipo": "BUG",
+      "severidad": "MAJOR"
+    },
+    "javascript:S1764": {
+      "nombre": "Identical expressions should not be used on both sides of a binary operator",
+      "tipo": "BUG",
+      "severidad": "MAJOR"
+    },
+    "javascript:S4790": {
+      "nombre": "Weak hashing algorithms should not be used",
+      "tipo": "VULNERABILITY",
+      "severidad": "CRITICAL"
+    },
+    "javascript:S5332": {
+      "nombre": "Clear-text protocols should not be used",
+      "tipo": "VULNERABILITY",
+      "severidad": "MINOR"
+    },
+    "javascript:S4036": {
+      "nombre": "OS commands should not rely on PATH resolution",
+      "tipo": "VULNERABILITY",
+      "severidad": "MINOR"
+    },
+    "javascript:S1523": {
+      "nombre": "Dynamic code execution should not use user-controlled data",
+      "tipo": "VULNERABILITY",
+      "severidad": "CRITICAL"
+    },
+    "javascript:S5689": {
+      "nombre": "Web application technologies should not disclose version information",
+      "tipo": "VULNERABILITY",
+      "severidad": "MINOR"
+    },
+    "javascript:S2612": {
+      "nombre": "File permissions should not be set to world-accessible values",
+      "tipo": "VULNERABILITY",
+      "severidad": "MAJOR"
+    },
+    "javascript:S2598": {
+      "nombre": "File uploads should be restricted",
+      "tipo": "VULNERABILITY",
+      "severidad": "CRITICAL"
+    },
+    "javascript:S5852": {
+      "nombre": "Regular expressions should not cause catastrophic backtracking",
+      "tipo": "VULNERABILITY",
+      "severidad": "CRITICAL"
+    },
+    "javascript:S7773": {
+      "nombre": "Number static methods and properties should be preferred over global equivalents",
+      "tipo": "CODE_SMELL",
+      "severidad": "MINOR"
+    },
+    "javascript:S8786": {
+      "nombre": "Regular expressions should not cause non-linear backtracking",
+      "tipo": "CODE_SMELL",
+      "severidad": "MAJOR"
+    },
+    "javascript:S8784": {
+      "nombre": "Assertions should be placed inside test cases or hooks",
+      "tipo": "CODE_SMELL",
+      "severidad": "MAJOR"
+    },
+    "javascript:S3516": {
+      "nombre": "Function returns should not be invariant",
+      "tipo": "CODE_SMELL",
+      "severidad": "BLOCKER"
+    },
+    "javascript:S7737": {
+      "nombre": "Objects should not be used as default parameters",
+      "tipo": "CODE_SMELL",
+      "severidad": "MINOR"
+    }
+  }
+}
