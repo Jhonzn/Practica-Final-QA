@@ -1,0 +1,800 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\playwright.config.js",
+    "rootDir": "C:/Users/David/Documents/Aseguramiento de calidad/Practica-Final-QA/qa/security/owasp/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\global-setup.js",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/David/Documents/Aseguramiento de calidad/Practica-Final-QA/qa/security/owasp/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/David/Documents/Aseguramiento de calidad/Practica-Final-QA/qa/security/owasp/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\tests",
+        "snapshotDir": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://localhost:4567",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "../reportes/owasp/html",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "../reportes/owasp/resultados-playwright.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "01-a01-control-acceso.spec.js",
+      "file": "01-a01-control-acceso.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "SEC-A01-01: usuario normal abre /admin en el navegador",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1232,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T03:45:58.814Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7efe9c8db15b1c503f33-c978bbc6be130ffde1f9",
+          "file": "01-a01-control-acceso.spec.js",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "SEC-A01-02: usuario normal usa la API de administración",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 314,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T03:46:01.807Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7efe9c8db15b1c503f33-f4b33d855396b9f53041",
+          "file": "01-a01-control-acceso.spec.js",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "SEC-A01-03: IDOR – usuario B modifica recursos del usuario A",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 401,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T03:46:02.136Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7efe9c8db15b1c503f33-336ea92adecf9fda0984",
+          "file": "01-a01-control-acceso.spec.js",
+          "line": 65,
+          "column": 1
+        },
+        {
+          "title": "SEC-A01-04: petición de escritura sin token CSRF (sesión válida)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 215,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T03:46:02.551Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7efe9c8db15b1c503f33-4d3138ee4a7bb1be6c05",
+          "file": "01-a01-control-acceso.spec.js",
+          "line": 97,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "02-a03-inyeccion-xss.spec.js",
+      "file": "02-a03-inyeccion-xss.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "SEC-A03-01: XSS almacenado en título y contenido de un tema",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2944,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T03:46:02.817Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "875a64d52d1c16f93cdb-9b5636381db2464ae6d8",
+          "file": "02-a03-inyeccion-xss.spec.js",
+          "line": 52,
+          "column": 1
+        },
+        {
+          "title": "SEC-A03-02: XSS almacenado en los campos del perfil",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4656,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T03:46:06.776Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "875a64d52d1c16f93cdb-b4526f56198ba35425a4",
+          "file": "02-a03-inyeccion-xss.spec.js",
+          "line": 82,
+          "column": 1
+        },
+        {
+          "title": "SEC-A03-03: XSS reflejado en la búsqueda y en parámetros de URL",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7387,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T03:46:11.453Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "875a64d52d1c16f93cdb-856f723306c9b84ea383",
+          "file": "02-a03-inyeccion-xss.spec.js",
+          "line": 117,
+          "column": 1
+        },
+        {
+          "title": "SEC-A03-04: inyección NoSQL en el inicio de sesión",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 297,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T03:46:18.857Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "875a64d52d1c16f93cdb-b9add2f6d147f962e265",
+          "file": "02-a03-inyeccion-xss.spec.js",
+          "line": 142,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "03-a05-configuracion.spec.js",
+      "file": "03-a05-configuracion.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "SEC-A05-01: cabeceras de seguridad y atributos de la cookie de sesión",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 306,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T03:46:19.198Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "665e944675766351d7cc-aaf320fa1d359652c338",
+          "file": "03-a05-configuracion.spec.js",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "SEC-A05-02: exposición de información a visitantes sin sesión",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 301,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T03:46:19.519Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "665e944675766351d7cc-47c9a47afe303c446693",
+          "file": "03-a05-configuracion.spec.js",
+          "line": 36,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "04-a07-autenticacion.spec.js",
+      "file": "04-a07-autenticacion.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "SEC-A07-01: fuerza bruta contra una cuenta (bloqueo tras 5 intentos)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3144,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T03:46:19.838Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d4080a01d9c7b2532378-759754d11f257edd6f87",
+          "file": "04-a07-autenticacion.spec.js",
+          "line": 23,
+          "column": 1
+        },
+        {
+          "title": "SEC-A07-02: enumeración de usuarios mediante el bloqueo compartido \"dummy\"",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3463,
+                  "error": {
+                    "message": "Error: Los mensajes deben ser iguales para usuarios existentes e inexistentes\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeFalsy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mtrue\u001b[39m",
+                    "stack": "Error: Los mensajes deben ser iguales para usuarios existentes e inexistentes\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeFalsy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mtrue\u001b[39m\n    at C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\tests\\04-a07-autenticacion.spec.js:87:101",
+                    "location": {
+                      "file": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\tests\\04-a07-autenticacion.spec.js",
+                      "column": 101,
+                      "line": 87
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 85 |\u001b[39m   \u001b[36mawait\u001b[39m ctx\u001b[33m.\u001b[39mdispose()\u001b[33m;\u001b[39m\n \u001b[90m 86 |\u001b[39m   \u001b[90m// La prueba documenta el comportamiento; el control esperado es que no haya enumeración.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 87 |\u001b[39m   expect\u001b[33m.\u001b[39msoft(enumerable\u001b[33m,\u001b[39m \u001b[32m'Los mensajes deben ser iguales para usuarios existentes e inexistentes'\u001b[39m)\u001b[33m.\u001b[39mtoBeFalsy()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 88 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 89 |\u001b[39m\n \u001b[90m 90 |\u001b[39m test(\u001b[32m'SEC-A07-03: bloqueo por IP también con credenciales correctas (denegación de servicio)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\tests\\04-a07-autenticacion.spec.js",
+                        "column": 101,
+                        "line": 87
+                      },
+                      "message": "Error: Los mensajes deben ser iguales para usuarios existentes e inexistentes\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeFalsy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mtrue\u001b[39m\n\n  85 |   await ctx.dispose();\n  86 |   // La prueba documenta el comportamiento; el control esperado es que no haya enumeración.\n> 87 |   expect.soft(enumerable, 'Los mensajes deben ser iguales para usuarios existentes e inexistentes').toBeFalsy();\n     |                                                                                                     ^\n  88 | });\n  89 |\n  90 | test('SEC-A07-03: bloqueo por IP también con credenciales correctas (denegación de servicio)', async ({ page }) => {\n    at C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\tests\\04-a07-autenticacion.spec.js:87:101"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T03:46:24.571Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\test-results\\04-a07-autenticacion-SEC-A-c4774-l-bloqueo-compartido-dummy-\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\test-results\\04-a07-autenticacion-SEC-A-c4774-l-bloqueo-compartido-dummy-\\error-context.md"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\test-results\\04-a07-autenticacion-SEC-A-c4774-l-bloqueo-compartido-dummy-\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\test-results\\04-a07-autenticacion-SEC-A-c4774-l-bloqueo-compartido-dummy-\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\tests\\04-a07-autenticacion.spec.js",
+                    "column": 101,
+                    "line": 87
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d4080a01d9c7b2532378-808f886342f8b5ce48ec",
+          "file": "04-a07-autenticacion.spec.js",
+          "line": 51,
+          "column": 1
+        },
+        {
+          "title": "SEC-A07-03: bloqueo por IP también con credenciales correctas (denegación de servicio)",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 8605,
+                  "error": {
+                    "message": "Error: Logins exitosos no deberían bloquear la IP\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeNull\u001b[2m()\u001b[22m\n\nReceived: \u001b[31m21\u001b[39m",
+                    "stack": "Error: Logins exitosos no deberían bloquear la IP\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeNull\u001b[2m()\u001b[22m\n\nReceived: \u001b[31m21\u001b[39m\n    at C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\tests\\04-a07-autenticacion.spec.js:115:81",
+                    "location": {
+                      "file": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\tests\\04-a07-autenticacion.spec.js",
+                      "column": 81,
+                      "line": 115
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 113 |\u001b[39m   \u001b[36mawait\u001b[39m h\u001b[33m.\u001b[39mscreenshotWithUrl(page\u001b[33m,\u001b[39m \u001b[32m'SEC-A07-03-ui'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 114 |\u001b[39m   h\u001b[33m.\u001b[39mrecord(\u001b[32m'SEC-A07-03'\u001b[39m\u001b[33m,\u001b[39m { filas\u001b[33m,\u001b[39m primeraIpBloqueada })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 115 |\u001b[39m   expect\u001b[33m.\u001b[39msoft(primeraIpBloqueada\u001b[33m,\u001b[39m \u001b[32m'Logins exitosos no deberían bloquear la IP'\u001b[39m)\u001b[33m.\u001b[39mtoBeNull()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 116 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 117 |\u001b[39m\n \u001b[90m 118 |\u001b[39m test(\u001b[32m'SEC-A07-04: política de contraseñas (longitud y fortaleza mínimas)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\tests\\04-a07-autenticacion.spec.js",
+                        "column": 81,
+                        "line": 115
+                      },
+                      "message": "Error: Logins exitosos no deberían bloquear la IP\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeNull\u001b[2m()\u001b[22m\n\nReceived: \u001b[31m21\u001b[39m\n\n  113 |   await h.screenshotWithUrl(page, 'SEC-A07-03-ui');\n  114 |   h.record('SEC-A07-03', { filas, primeraIpBloqueada });\n> 115 |   expect.soft(primeraIpBloqueada, 'Logins exitosos no deberían bloquear la IP').toBeNull();\n      |                                                                                 ^\n  116 | });\n  117 |\n  118 | test('SEC-A07-04: política de contraseñas (longitud y fortaleza mínimas)', async ({ page }) => {\n    at C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\tests\\04-a07-autenticacion.spec.js:115:81"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T03:46:29.513Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\test-results\\04-a07-autenticacion-SEC-A-313d9-tas-denegación-de-servicio-\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\test-results\\04-a07-autenticacion-SEC-A-313d9-tas-denegación-de-servicio-\\error-context.md"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\test-results\\04-a07-autenticacion-SEC-A-313d9-tas-denegación-de-servicio-\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\test-results\\04-a07-autenticacion-SEC-A-313d9-tas-denegación-de-servicio-\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\tests\\04-a07-autenticacion.spec.js",
+                    "column": 81,
+                    "line": 115
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d4080a01d9c7b2532378-7ddffefe8aa17d03533e",
+          "file": "04-a07-autenticacion.spec.js",
+          "line": 90,
+          "column": 1
+        },
+        {
+          "title": "SEC-A07-04: política de contraseñas (longitud y fortaleza mínimas)",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2967,
+                  "error": {
+                    "message": "Error: Contraseñas débiles aceptadas\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"abc123456\",\u001b[39m\n\u001b[31m+   \"medellin1\",\u001b[39m\n\u001b[31m+   \"nodebb2026\",\u001b[39m\n\u001b[31m+   \"Clave123\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: Contraseñas débiles aceptadas\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"abc123456\",\u001b[39m\n\u001b[31m+   \"medellin1\",\u001b[39m\n\u001b[31m+   \"nodebb2026\",\u001b[39m\n\u001b[31m+   \"Clave123\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\tests\\04-a07-autenticacion.spec.js:140:59",
+                    "location": {
+                      "file": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\tests\\04-a07-autenticacion.spec.js",
+                      "column": 59,
+                      "line": 140
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 138 |\u001b[39m   \u001b[36mawait\u001b[39m adminCtx\u001b[33m.\u001b[39mdispose()\u001b[33m;\u001b[39m\n \u001b[90m 139 |\u001b[39m   expect(aceptadas)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoContain(\u001b[32m'123456'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 140 |\u001b[39m   expect\u001b[33m.\u001b[39msoft(aceptadas\u001b[33m,\u001b[39m \u001b[32m'Contraseñas débiles aceptadas'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 141 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 142 |\u001b[39m\n \u001b[90m 143 |\u001b[39m test(\u001b[32m'SEC-A07-05: la sesión se invalida en el servidor al cerrar sesión'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\tests\\04-a07-autenticacion.spec.js",
+                        "column": 59,
+                        "line": 140
+                      },
+                      "message": "Error: Contraseñas débiles aceptadas\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"abc123456\",\u001b[39m\n\u001b[31m+   \"medellin1\",\u001b[39m\n\u001b[31m+   \"nodebb2026\",\u001b[39m\n\u001b[31m+   \"Clave123\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  138 |   await adminCtx.dispose();\n  139 |   expect(aceptadas).not.toContain('123456');\n> 140 |   expect.soft(aceptadas, 'Contraseñas débiles aceptadas').toEqual([]);\n      |                                                           ^\n  141 | });\n  142 |\n  143 | test('SEC-A07-05: la sesión se invalida en el servidor al cerrar sesión', async ({ page }) => {\n    at C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\tests\\04-a07-autenticacion.spec.js:140:59"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T03:46:41.246Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\test-results\\04-a07-autenticacion-SEC-A-1676d-ngitud-y-fortaleza-mínimas-\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\test-results\\04-a07-autenticacion-SEC-A-1676d-ngitud-y-fortaleza-mínimas-\\error-context.md"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\test-results\\04-a07-autenticacion-SEC-A-1676d-ngitud-y-fortaleza-mínimas-\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\test-results\\04-a07-autenticacion-SEC-A-1676d-ngitud-y-fortaleza-mínimas-\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\David\\Documents\\Aseguramiento de calidad\\Practica-Final-QA\\qa\\security\\owasp\\tests\\04-a07-autenticacion.spec.js",
+                    "column": 59,
+                    "line": 140
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d4080a01d9c7b2532378-3a6fb75cb4225f8bf1db",
+          "file": "04-a07-autenticacion.spec.js",
+          "line": 118,
+          "column": 1
+        },
+        {
+          "title": "SEC-A07-05: la sesión se invalida en el servidor al cerrar sesión",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1508,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T03:46:47.302Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d4080a01d9c7b2532378-a84cd804aabed87594aa",
+          "file": "04-a07-autenticacion.spec.js",
+          "line": 143,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-20T03:45:57.028Z",
+    "duration": 54376.664000000004,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

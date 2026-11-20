@@ -1,0 +1,13 @@
+{
+  "name": "nodebb-qa-security",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pruebas de seguridad guiadas por el OWASP Top 10 (2021) sobre NodeBB - Caso practico final QA",
+  "scripts": {
+    "test": "playwright test",
+    "report": "playwright show-report ../reportes/owasp/html"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1"
+  }
+}

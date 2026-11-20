@@ -1,0 +1,563 @@
+{
+  "SEC-A01-01": {
+    "usuario": "secBmwofsjwf489",
+    "status": 403,
+    "urlFinal": "http://localhost:4567/admin",
+    "elementosAcp": 0,
+    "fecha": "2026-11-20T03:46:01.731Z"
+  },
+  "SEC-A01-02": {
+    "filas": [
+      {
+        "peticion": "GET /api/admin/settings/general",
+        "esperado": "401/403, sin efecto",
+        "obtenido": "HTTP 403 {\"path\":\"/admin/settings/general\",\"loggedIn\":true,\"title\":\"[[global:403.title]]\",\"bodyClass\":\"page-admin page-admin-sett",
+        "ok": true
+      },
+      {
+        "peticion": "GET /api/admin/manage/users",
+        "esperado": "401/403, sin efecto",
+        "obtenido": "HTTP 403 {\"path\":\"/admin/manage/users\",\"loggedIn\":true,\"title\":\"[[global:403.title]]\",\"bodyClass\":\"page-admin page-admin-manage p",
+        "ok": true
+      },
+      {
+        "peticion": "PUT /api/v3/admin/settings/postQueue",
+        "esperado": "401/403, sin efecto",
+        "obtenido": "HTTP 403 {\"status\":{\"code\":\"forbidden\",\"message\":\"You are not authorised to make this call\"},\"response\":{}}",
+        "ok": true
+      },
+      {
+        "peticion": "POST /api/v3/users",
+        "esperado": "401/403, sin efecto",
+        "obtenido": "HTTP 403 {\"status\":{\"code\":\"forbidden\",\"message\":\"You do not have enough privileges for this action.\"},\"response\":{}}",
+        "ok": true
+      },
+      {
+        "peticion": "PUT /api/v3/groups/administrators/membership/28",
+        "esperado": "401/403, sin efecto",
+        "obtenido": "HTTP 401 {\"status\":{\"code\":\"not-authorised\",\"message\":\"A valid login session was not found. Please log in and try again.\"},\"respo",
+        "ok": true
+      },
+      {
+        "peticion": "GET /api/v3/admin/analytics",
+        "esperado": "401/403, sin efecto",
+        "obtenido": "HTTP 403 {\"status\":{\"code\":\"forbidden\",\"message\":\"You are not authorised to make this call\"},\"response\":{}}",
+        "ok": true
+      },
+      {
+        "peticion": "Verificación: miembros del grupo administrators",
+        "esperado": "No incluye uid 28",
+        "obtenido": "uids: 1",
+        "ok": true
+      }
+    ],
+    "fecha": "2026-11-20T03:46:02.080Z"
+  },
+  "SEC-A01-03": {
+    "filas": [
+      {
+        "peticion": "PUT /api/v3/posts/7",
+        "esperado": "403 (no es el dueño)",
+        "obtenido": "HTTP 403 {\"status\":{\"code\":\"forbidden\",\"message\":\"You do not have enough privileges for this action.\"},\"response\":{}}",
+        "ok": true
+      },
+      {
+        "peticion": "DELETE /api/v3/posts/7",
+        "esperado": "403 (no es el dueño)",
+        "obtenido": "HTTP 403 {\"status\":{\"code\":\"forbidden\",\"message\":\"You do not have enough privileges for this action.\"},\"response\":{}}",
+        "ok": true
+      },
+      {
+        "peticion": "DELETE /api/v3/topics/7",
+        "esperado": "403 (no es el dueño)",
+        "obtenido": "HTTP 403 {\"status\":{\"code\":\"forbidden\",\"message\":\"You do not have enough privileges for this action.\"},\"response\":{}}",
+        "ok": true
+      },
+      {
+        "peticion": "PUT /api/v3/users/27",
+        "esperado": "403 (no es el dueño)",
+        "obtenido": "HTTP 403 {\"status\":{\"code\":\"forbidden\",\"message\":\"You do not have enough privileges for this action.\"},\"response\":{}}",
+        "ok": true
+      },
+      {
+        "peticion": "PUT /api/v3/users/27/password",
+        "esperado": "403 (no es el dueño)",
+        "obtenido": "HTTP 401 {\"status\":{\"code\":\"not-authorised\",\"message\":\"A valid login session was not found. Please log in and try again",
+        "ok": true
+      },
+      {
+        "peticion": "Verificación: contenido del post 7",
+        "esperado": "Sin cambios",
+        "obtenido": "Contenido original del usuario A para la prueba IDOR.",
+        "ok": true
+      },
+      {
+        "peticion": "Verificación: fullname de secAmwofsjo095",
+        "esperado": "Sin cambios (vacío)",
+        "obtenido": "(vacío)",
+        "ok": true
+      }
+    ],
+    "pid": 7,
+    "tid": 7,
+    "fecha": "2026-11-20T03:46:02.495Z"
+  },
+  "SEC-A01-04": {
+    "filas": [
+      {
+        "peticion": "POST /api/v3/topics (sin cabecera x-csrf-token)",
+        "esperado": "403 invalid-csrf-token",
+        "obtenido": "HTTP 403 Forbidden",
+        "ok": true
+      },
+      {
+        "peticion": "POST /api/v3/topics (con token inválido)",
+        "esperado": "403 invalid-csrf-token",
+        "obtenido": "HTTP 403 Forbidden",
+        "ok": true
+      }
+    ],
+    "fecha": "2026-11-20T03:46:02.740Z"
+  },
+  "SEC-A03-01": {
+    "url": "http://localhost:4567/topic/8/script-alert-xss-t1-script-img-src-x-onerror-alert-xss-t2-titulo",
+    "dialogos": [],
+    "dom": {
+      "scripts": 0,
+      "manejadores": [],
+      "hrefJs": 0,
+      "iframes": 0,
+      "zonas": 1
+    },
+    "tituloVisible": "<script>alert('XSS-T1')</script><img src=x onerror=alert('XSS-T2')> titulo",
+    "markdownActivo": true,
+    "htmlGuardado": "Prueba de XSS almacenado (A03). Control: **negrita** y [enlace legítimo](https://example.org) deben renderizarse.\n\n<script>alert('XSS-C1')</script>\n<img src=x onerror=\"alert('XSS-C2')\">\n<svg onload=alert('XSS-C3')></svg>\n<a href=\"javascript:alert('XSS-C4')\">enlace html</a>\n[enlace markdown](javascript:alert('XSS-C5'))\n<iframe src=\"javascript:alert('XSS-C6')\"></iframe>\n<div style=\"background:url(javascript:alert('XSS-C7'))\">estilo</div>\n<details open ontoggle=alert('XSS-C8')>detalles</details>\n![img](x\" onerror=\"alert('XSS-C9'))",
+    "htmlRenderizado": "\n\n<p dir=\"auto\">Prueba de XSS almacenado (A03). Control: <strong>negrita</strong> y <a href=\"https://example.org\" rel=\"nofollow ugc\">enlace legítimo</a> deben renderizarse.</p>\n<p dir=\"auto\">&lt;script&gt;alert('XSS-C1')&lt;/script&gt;<br>\n&lt;img src=x onerror=\"alert('XSS-C2')\"&gt;<br>\n&lt;svg onload=alert('XSS-C3')&gt;&lt;/svg&gt;<br>\n&lt;a href=\"javascript:alert('XSS-C4')\"&gt;enlace html&lt;/a&gt;<br>\n[enlace markdown](javascript:alert('XSS-C5'))<br>\n&lt;iframe src=\"javascript:alert('XSS-C6')\"&gt;&lt;/iframe&gt;<br>\n&lt;div style=\"background:url(javascript:alert('XSS-C7'))\"&gt;estilo&lt;/div&gt;<br>\n&lt;details open ontoggle=alert('XSS-C8')&gt;detalles&lt;/details&gt;<br>\n![img](x\" onerror=\"alert('XSS-C9'))</p>\n\n\n",
+    "fecha": "2026-11-20T03:46:06.684Z"
+  },
+  "SEC-A03-02": {
+    "respuestaUpdate": "HTTP 200 {\"status\":{\"code\":\"ok\",\"message\":\"OK\"},\"response\":{\"uid\":29,\"username\":\"secXmwofsmq0554\",\"userslug\":\"secxmwofsmq0554\",\"email\":\"\",\"email:confirmed\":0,\"joindate\":1795146363159,\"lastonline\":1795146363159",
+    "dialogos": [],
+    "domPerfil": {
+      "scripts": 0,
+      "manejadores": [],
+      "hrefJs": 0,
+      "iframes": 0,
+      "zonas": 2
+    },
+    "domFirma": {
+      "scripts": 0,
+      "manejadores": [],
+      "hrefJs": 0,
+      "iframes": 0,
+      "zonas": 1
+    },
+    "hrefWebsite": 0,
+    "fecha": "2026-11-20T03:46:11.379Z"
+  },
+  "SEC-A03-03": {
+    "filas": [
+      {
+        "peticion": "GET /search?term=<script>alert('XSS-R1')</script>&in=titlesposts",
+        "esperado": "La carga se muestra como texto; no se ejecuta",
+        "obtenido": "HTTP 200 · diálogos: 0 · manejadores on*: 0",
+        "ok": true
+      },
+      {
+        "peticion": "GET /search?term=\"><img src=x onerror=alert('XSS-R2')>",
+        "esperado": "La carga se muestra como texto; no se ejecuta",
+        "obtenido": "HTTP 200 · diálogos: 0 · manejadores on*: 0",
+        "ok": true
+      },
+      {
+        "peticion": "GET /login?next=javascript:alert('XSS-R3')",
+        "esperado": "La carga se muestra como texto; no se ejecuta",
+        "obtenido": "HTTP 200 · diálogos: 0 · manejadores on*: 0",
+        "ok": true
+      },
+      {
+        "peticion": "GET /tags/<svg onload=alert('XSS-R4')>",
+        "esperado": "La carga se muestra como texto; no se ejecuta",
+        "obtenido": "HTTP 200 · diálogos: 0 · manejadores on*: 0",
+        "ok": true
+      }
+    ],
+    "dialogos": [],
+    "fecha": "2026-11-20T03:46:18.792Z"
+  },
+  "SEC-A03-04": {
+    "filas": [
+      {
+        "peticion": "POST /login {\"username\":{\"$ne\":null},\"password\":{\"$ne\":null}}",
+        "esperado": "Rechazado, sin sesión",
+        "obtenido": "HTTP 403 [[error:invalid-username-or-password]] · uid de sesión: 0",
+        "ok": true
+      },
+      {
+        "peticion": "POST /login {\"username\":\"admin\",\"password\":{\"$gt\":\"\"}}",
+        "esperado": "Rechazado, sin sesión",
+        "obtenido": "HTTP 403 [[error:invalid-username-or-password]] · uid de sesión: 0",
+        "ok": true
+      },
+      {
+        "peticion": "POST /login {\"username\":{\"$regex\":\"^adm\"},\"password\":\"x\"}",
+        "esperado": "Rechazado, sin sesión",
+        "obtenido": "HTTP 403 [[error:invalid-login-credentials]] · uid de sesión: 0",
+        "ok": true
+      }
+    ],
+    "fecha": "2026-11-20T03:46:19.110Z"
+  },
+  "SEC-A05-01": {
+    "headers": {
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "x-powered-by": "NodeBB",
+      "content-security-policy": "frame-ancestors 'self'",
+      "cache-control": "private, no-cache",
+      "content-type": "text/html; charset=utf-8",
+      "content-length": "50406",
+      "etag": "W/\"c4e6-hSBn+19EDyvlNVVqKe13b3LH8t8\"",
+      "set-cookie": "express.sid=s%3AZ6-FAuozGOExvSDBGHy5yHu82QXh1q2N.i3UC6uldxsUC77Y%2FyiqS4s%2FirGa3HGhxmRwXCfbbS3M; Path=/; Expires=Fri, 04 Dec 2026 03:46:19 GMT; HttpOnly; SameSite=Lax",
+      "date": "Fri, 20 Nov 2026 03:46:19 GMT",
+      "connection": "keep-alive",
+      "keep-alive": "timeout=5"
+    },
+    "cookie": "express.sid=s%3AZ6-FAuozGOExvSDBGHy5yHu82QXh1q2N.i3UC6uldxsUC77Y%2FyiqS4s%2FirGa3HGhxmRwXCfbbS3M; Path=/; Expires=Fri, 04 Dec 2026 03:46:19 GMT; HttpOnly; SameSite=Lax",
+    "filas": [
+      {
+        "peticion": "X-Frame-Options",
+        "esperado": "DENY o SAMEORIGIN",
+        "obtenido": "SAMEORIGIN",
+        "ok": true
+      },
+      {
+        "peticion": "X-Content-Type-Options",
+        "esperado": "nosniff",
+        "obtenido": "nosniff",
+        "ok": true
+      },
+      {
+        "peticion": "Referrer-Policy",
+        "esperado": "strict-origin-when-cross-origin o más estricta",
+        "obtenido": "strict-origin-when-cross-origin",
+        "ok": true
+      },
+      {
+        "peticion": "Strict-Transport-Security",
+        "esperado": "max-age >= 15552000 (efectiva solo en HTTPS)",
+        "obtenido": "max-age=31536000; includeSubDomains",
+        "ok": true
+      },
+      {
+        "peticion": "Content-Security-Policy",
+        "esperado": "Política con default-src/script-src (no solo frame-ancestors)",
+        "obtenido": "frame-ancestors 'self'",
+        "ok": false
+      },
+      {
+        "peticion": "Permissions-Policy",
+        "esperado": "Definida (cámara, micrófono, geolocalización…)",
+        "obtenido": "(ausente)",
+        "ok": false
+      },
+      {
+        "peticion": "X-Powered-By",
+        "esperado": "Ausente (no revelar la tecnología)",
+        "obtenido": "NodeBB",
+        "ok": false
+      },
+      {
+        "peticion": "Cross-Origin-Opener-Policy",
+        "esperado": "same-origin",
+        "obtenido": "same-origin",
+        "ok": true
+      },
+      {
+        "peticion": "Cookie express.sid: HttpOnly",
+        "esperado": "Presente",
+        "obtenido": "express.sid=s%3AZ6-FAuozGOExvSDBGHy5yHu82QXh1q2N.i3UC6uldxsUC77Y%2FyiqS4s%2FirGa3HGhxmRwXCfbbS3M; Path=/; Expires=Fri, 04 Dec 2026 03:46:19 GMT; HttpOnly; SameS",
+        "ok": true
+      },
+      {
+        "peticion": "Cookie express.sid: SameSite",
+        "esperado": "Lax o Strict",
+        "obtenido": "SameSite=Lax",
+        "ok": true
+      },
+      {
+        "peticion": "Cookie express.sid: Secure",
+        "esperado": "Presente (requiere HTTPS)",
+        "obtenido": "(ausente: el ambiente usa HTTP)",
+        "ok": false
+      }
+    ],
+    "fecha": "2026-11-20T03:46:19.464Z"
+  },
+  "SEC-A05-02": {
+    "filas": [
+      {
+        "peticion": "GET /api/users (sin sesión)",
+        "esperado": "Requiere sesión o lista limitada",
+        "obtenido": "HTTP 200 · 29 usuarios: secXmwofsmq0554, secBmwofsjwf489, secAmwofsjo095, secVmwofsa9j736, pwmwofs7vo875, pwmwofs7nw443",
+        "ok": false
+      },
+      {
+        "peticion": "GET /api/user/admin (sin sesión)",
+        "esperado": "No revelar el rol de administrador",
+        "obtenido": "HTTP 200 · groupTitle: [\"administrators\"] · email: \"\"",
+        "ok": false
+      },
+      {
+        "peticion": "GET /api/v3/no-existe",
+        "esperado": "Error genérico sin traza (stack)",
+        "obtenido": "HTTP 404 {\"status\":{\"code\":\"not-found\",\"message\":\"Invalid API call\"},\"response\":{}}",
+        "ok": true
+      },
+      {
+        "peticion": "GET /assets/uploads/ (listado de directorio)",
+        "esperado": "404/403, sin listado",
+        "obtenido": "HTTP 404",
+        "ok": true
+      },
+      {
+        "peticion": "GET /robots.txt",
+        "esperado": "Sin rutas sensibles ocultas",
+        "obtenido": "User-agent: * ¶ Disallow: /admin/ ¶ Disallow: /reset/ ¶ Disallow: /compose ¶ Sitemap: http://localhost:4567/sitemap.xml",
+        "ok": true
+      }
+    ],
+    "usuariosVisibles": 29,
+    "fecha": "2026-11-20T03:46:19.765Z"
+  },
+  "SEC-A07-01": {
+    "filas": [
+      {
+        "peticion": "Intento 1: POST /login (secVmwoft0j7272 / 123456)",
+        "esperado": "Rechazado",
+        "obtenido": "HTTP 403 [[error:invalid-login-credentials]]",
+        "ok": true
+      },
+      {
+        "peticion": "Intento 2: POST /login (secVmwoft0j7272 / password)",
+        "esperado": "Rechazado",
+        "obtenido": "HTTP 403 [[error:invalid-login-credentials]]",
+        "ok": true
+      },
+      {
+        "peticion": "Intento 3: POST /login (secVmwoft0j7272 / qwerty123)",
+        "esperado": "Rechazado",
+        "obtenido": "HTTP 403 [[error:invalid-login-credentials]]",
+        "ok": true
+      },
+      {
+        "peticion": "Intento 4: POST /login (secVmwoft0j7272 / admin123)",
+        "esperado": "Rechazado",
+        "obtenido": "HTTP 403 [[error:invalid-login-credentials]]",
+        "ok": true
+      },
+      {
+        "peticion": "Intento 5: POST /login (secVmwoft0j7272 / letmein)",
+        "esperado": "Rechazado",
+        "obtenido": "HTTP 403 [[error:invalid-login-credentials]]",
+        "ok": true
+      },
+      {
+        "peticion": "Intento 6: POST /login (secVmwoft0j7272 / Sec-Prueba-2025!)",
+        "esperado": "Cuenta bloqueada",
+        "obtenido": "HTTP 403 [[error:account-locked]]",
+        "ok": true
+      },
+      {
+        "peticion": "Intento 7: contraseña correcta",
+        "esperado": "Cuenta bloqueada (60 min)",
+        "obtenido": "HTTP 403 [[error:account-locked]]",
+        "ok": true
+      }
+    ],
+    "mensajeUi": "Login Unsuccessful\n\nYour account has been locked temporarily",
+    "fecha": "2026-11-20T03:46:24.463Z"
+  },
+  "SEC-A07-02": {
+    "filas": [
+      {
+        "peticion": "Fase 1 · usuario existente + clave errónea",
+        "esperado": "Mensaje genérico",
+        "obtenido": "HTTP 403 [[error:invalid-login-credentials]]",
+        "ok": true
+      },
+      {
+        "peticion": "Fase 1 · usuario inexistente",
+        "esperado": "El mismo mensaje",
+        "obtenido": "HTTP 403 [[error:invalid-login-credentials]]",
+        "ok": true
+      },
+      {
+        "peticion": "Fase 2 · 5 intentos con usuarios inexistentes distintos",
+        "esperado": "—",
+        "obtenido": "Total de 6 intentos sobre la clave \"lockout:dummy\"",
+        "ok": true
+      },
+      {
+        "peticion": "Fase 3 · usuario inexistente nuevo",
+        "esperado": "Mismo mensaje que un usuario real",
+        "obtenido": "HTTP 403 [[error:account-locked]]",
+        "ok": true
+      },
+      {
+        "peticion": "Fase 3 · usuario existente + clave errónea",
+        "esperado": "Mismo mensaje que un usuario inexistente",
+        "obtenido": "HTTP 403 [[error:invalid-login-credentials]]",
+        "ok": false
+      },
+      {
+        "peticion": "Fase 3 · correo NO registrado",
+        "esperado": "Mismo mensaje que un correo registrado",
+        "obtenido": "HTTP 403 [[error:account-locked]]",
+        "ok": true
+      },
+      {
+        "peticion": "Fase 3 · correo registrado (victima.mwoft0j7712@example.org)",
+        "esperado": "Mismo mensaje que un correo no registrado",
+        "obtenido": "HTTP 403 [[error:invalid-login-credentials]]",
+        "ok": false
+      }
+    ],
+    "enumerable": true,
+    "correoEnumerable": true,
+    "fecha": "2026-11-20T03:46:27.928Z"
+  },
+  "SEC-A07-03": {
+    "filas": [
+      {
+        "peticion": "Login exitoso nº 1 desde la misma IP",
+        "esperado": "HTTP 200",
+        "obtenido": "HTTP 200 OK",
+        "ok": true
+      },
+      {
+        "peticion": "Login exitoso nº 2 desde la misma IP",
+        "esperado": "HTTP 200",
+        "obtenido": "HTTP 200 OK",
+        "ok": true
+      },
+      {
+        "peticion": "Login exitoso nº 20 desde la misma IP",
+        "esperado": "HTTP 200",
+        "obtenido": "HTTP 200 OK",
+        "ok": true
+      },
+      {
+        "peticion": "Login exitoso nº 21 desde la misma IP",
+        "esperado": "HTTP 200",
+        "obtenido": "HTTP 403 [[error:ip-locked]]",
+        "ok": false
+      },
+      {
+        "peticion": "Login del ADMINISTRADOR (otra cuenta, misma IP)",
+        "esperado": "HTTP 200",
+        "obtenido": "HTTP 403 [[error:ip-locked]]",
+        "ok": false
+      }
+    ],
+    "primeraIpBloqueada": 21,
+    "fecha": "2026-11-20T03:46:39.519Z"
+  },
+  "SEC-A07-04": {
+    "filas": [
+      {
+        "peticion": "Crear usuario con contraseña \"12345\" (5 caracteres)",
+        "esperado": "Rechazada (contraseña débil o común)",
+        "obtenido": "Rechazada: {\"status\":{\"code\":\"bad-request\",\"message\":\"The password entered is too short, pl",
+        "ok": true
+      },
+      {
+        "peticion": "Crear usuario con contraseña \"123456\" (6 caracteres)",
+        "esperado": "Rechazada (contraseña débil o común)",
+        "obtenido": "Rechazada: {\"status\":{\"code\":\"bad-request\",\"message\":\"Weak password.\"},\"response\":{}}",
+        "ok": true
+      },
+      {
+        "peticion": "Crear usuario con contraseña \"abcdef\" (6 caracteres)",
+        "esperado": "Rechazada (contraseña débil o común)",
+        "obtenido": "Rechazada: {\"status\":{\"code\":\"bad-request\",\"message\":\"Weak password.\"},\"response\":{}}",
+        "ok": true
+      },
+      {
+        "peticion": "Crear usuario con contraseña \"password\" (8 caracteres)",
+        "esperado": "Rechazada (contraseña débil o común)",
+        "obtenido": "Rechazada: {\"status\":{\"code\":\"bad-request\",\"message\":\"Weak password.\"},\"response\":{}}",
+        "ok": true
+      },
+      {
+        "peticion": "Crear usuario con contraseña \"qwerty12\" (8 caracteres)",
+        "esperado": "Rechazada (contraseña débil o común)",
+        "obtenido": "Rechazada: {\"status\":{\"code\":\"bad-request\",\"message\":\"Weak password.\"},\"response\":{}}",
+        "ok": true
+      },
+      {
+        "peticion": "Crear usuario con contraseña \"abc123456\" (9 caracteres)",
+        "esperado": "Rechazada (contraseña débil o común)",
+        "obtenido": "ACEPTADA",
+        "ok": false
+      },
+      {
+        "peticion": "Crear usuario con contraseña \"medellin1\" (9 caracteres)",
+        "esperado": "Rechazada (contraseña débil o común)",
+        "obtenido": "ACEPTADA",
+        "ok": false
+      },
+      {
+        "peticion": "Crear usuario con contraseña \"nodebb2026\" (10 caracteres)",
+        "esperado": "Rechazada (contraseña débil o común)",
+        "obtenido": "ACEPTADA",
+        "ok": false
+      },
+      {
+        "peticion": "Crear usuario con contraseña \"Clave123\" (8 caracteres)",
+        "esperado": "Rechazada (contraseña débil o común)",
+        "obtenido": "ACEPTADA",
+        "ok": false
+      }
+    ],
+    "aceptadas": [
+      "abc123456",
+      "medellin1",
+      "nodebb2026",
+      "Clave123"
+    ],
+    "fecha": "2026-11-20T03:46:45.716Z"
+  },
+  "SEC-A07-05": {
+    "filas": [
+      {
+        "peticion": "GET /api/config con la sesión activa",
+        "esperado": "uid 37",
+        "obtenido": "uid 37",
+        "ok": true
+      },
+      {
+        "peticion": "POST /logout",
+        "esperado": "HTTP 200",
+        "obtenido": "HTTP 200",
+        "ok": true
+      },
+      {
+        "peticion": "GET /api/config reutilizando la cookie anterior",
+        "esperado": "uid 0 (sesión destruida)",
+        "obtenido": "uid 0",
+        "ok": true
+      }
+    ],
+    "fecha": "2026-11-20T03:46:50.444Z"
+  }
+}
