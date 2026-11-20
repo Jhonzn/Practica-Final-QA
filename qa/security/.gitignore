@@ -1,0 +1,4 @@
+owasp/node_modules/
+owasp/test-results/
+owasp/install.log
+reportes/zap/zap.yaml
