@@ -1,0 +1,54 @@
+{
+  "CP-M01": {
+    "fecha": "2026-11-20T03:32:58.545Z",
+    "obtenido": "Junto al campo aparece \"Username too short\" y la página sigue en /register; no se crea la cuenta.",
+    "estado": "Aprobado"
+  },
+  "CP-M02": {
+    "fecha": "2026-11-20T03:33:00.302Z",
+    "obtenido": "/admin responde HTTP 403 con la página \"NodeBB\"; /admin/manage/users responde HTTP 403; no se ve ninguna opción del panel.",
+    "estado": "Aprobado"
+  },
+  "CP-M03": {
+    "fecha": "2026-11-20T03:33:03.189Z",
+    "obtenido": "Sin error en el campo; la cuenta \"qh\" se creó (uid 3) y quedó con la sesión iniciada.",
+    "estado": "Aprobado",
+    "datos": "usuario qh"
+  },
+  "CP-M04": {
+    "fecha": "2026-11-20T03:33:06.777Z",
+    "obtenido": "Tras iniciar sesión sale de /login (uid 2, menú de usuario visible: sí). Tras cerrar sesión el uid es 0 y /user/qa_usuario01/settings redirige a /login.",
+    "estado": "Aprobado"
+  },
+  "CP-M05": {
+    "fecha": "2026-11-20T03:33:08.269Z",
+    "obtenido": "Permanece en /login, muestra \"Login Unsuccessful Invalid login credentials\" y no inicia sesión (uid 0).",
+    "estado": "Aprobado"
+  },
+  "CP-M06": {
+    "fecha": "2026-11-20T03:36:26.958Z",
+    "obtenido": "Sin sesión: /categories lista 4 categorías; la categoría \"Announcements\" muestra 2 tema(s); el tema \"Titulo limite xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\" muestra 1 publicación(es) con autor y contenido; /recent lista 3 temas. No se pidió iniciar sesión.",
+    "estado": "Aprobado"
+  },
+  "CP-M07": {
+    "fecha": "2026-11-20T03:33:12.005Z",
+    "obtenido": "El tema se publicó sin errores (/topic/3/titulo-limite-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx); el título se muestra completo (255 caracteres) y aparece en /recent.",
+    "estado": "Aprobado",
+    "tema": "http://localhost:4567/topic/3/titulo-limite-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  "CP-M08": {
+    "fecha": "2026-11-20T03:33:14.216Z",
+    "obtenido": "Se muestra \"Please enter a longer post. Posts should contain at least 8 character(s). Your account does not have an email set. An email is necessary for account recovery, and may be necessary for chatting and posting in some categories. Please click here to enter an email. | Please enter a longer post. Posts should contain at least 8 character(s). | Your account does not have an email set. An email is necessary for account recovery, and may be necessary for chatting and posting in some categories. Please click here to enter an email. | Looks like your connection to NodeBB was lost, please wait while we try to reconnect.\"; el editor sigue abierto y el tema no aparece en /recent.",
+    "estado": "Aprobado"
+  },
+  "CP-M09": {
+    "fecha": "2026-11-20T03:36:33.707Z",
+    "obtenido": "Tras recargar, la respuesta aparece al final del tema con el autor qa_usuario01; el tema pasó de 1 a 2 publicaciones.",
+    "estado": "Aprobado"
+  },
+  "CP-M10": {
+    "fecha": "2026-11-20T03:37:28.229Z",
+    "obtenido": "Tras docker compose restart, /recent responde HTTP 200 y los 3 temas anotados (22 publicaciones entre temas y respuestas) siguen con el mismo título, autor y número de respuestas.",
+    "estado": "Aprobado"
+  }
+}
