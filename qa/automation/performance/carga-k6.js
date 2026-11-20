@@ -1,4 +1,4 @@
-// Prueba de carga basica para NodeBB con k6 (RNF01, RNF02, RNF03).
+// Prueba de carga basica para NodeBB con k6 (RNF01: p95, tasa de errores y respuestas 5xx).
 //
 // Escenario: hasta 20 usuarios virtuales navegan el foro como visitantes
 // (pagina de inicio, categorias, recientes y un tema) durante ~2 minutos.
@@ -20,9 +20,9 @@ export const options = {
   thresholds: {
     // RNF01: p95 del tiempo de respuesta menor a 3 s
     http_req_duration: ['p(95)<3000'],
-    // RNF02: menos del 1 % de peticiones fallidas
+    // RNF01 (complementario): menos del 1 % de peticiones fallidas
     http_req_failed: ['rate<0.01'],
-    // RNF03: ningun error 5xx (los checks deben pasar en mas del 99 %)
+    // RNF01 (complementario): ningun error 5xx (los checks deben pasar en mas del 99 %)
     checks: ['rate>0.99'],
   },
 };

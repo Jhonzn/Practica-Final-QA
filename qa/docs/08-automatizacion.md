@@ -9,24 +9,24 @@ Resultados de la ejecución del 16 de noviembre de 2026 sobre NodeBB 4.16.7 (Win
 | Lenguaje | JavaScript (Node.js) | Es el mismo lenguaje de NodeBB, así que se pueden leer las reglas de validación directamente en el código. |
 | Pruebas de API y E2E | Playwright 1.64.1 (`@playwright/test`) | Un solo framework para API (`request`) e interfaz (Chromium), con reportes HTML, capturas, video y trazas. |
 | Pruebas unitarias | Mocha + nyc (suite incluida en NodeBB) | Reutiliza las pruebas del proyecto y mide la cobertura de código. |
-| Carga | k6 | Los scripts se escriben en JavaScript y los umbrales se definen como criterios de aceptación (RNF01 a RNF03). |
+| Carga | k6 | Los scripts se escriben en JavaScript y los umbrales se definen como criterios de aceptación de RNF01 (p95, tasa de errores y respuestas 5xx). |
 | CI | GitHub Actions | El repositorio está en GitHub; los reportes quedan como artefactos de cada ejecución. |
 
 ## 8.2 Scripts y escenarios cubiertos
 
 | Caso | Archivo | Escenario | Técnica | Requisito |
 |---|---|---|---|---|
-| CP-A01 | `tests/api/api-config.spec.js` | `GET /api/config` responde 200 en JSON, en menos de 3 s, con token CSRF y los límites de configuración | Partición de equivalencia | RF12, RNF01 |
-| CP-A02 | `tests/api/api-config.spec.js` | `POST /api/v3/topics` sin sesión responde 401/403 y el tema no aparece en `/api/recent` | Partición de equivalencia | RF12, RNF05 |
-| CP-A03 | `tests/api/topics-limites.spec.js` | Contenido de 7 caracteres se rechaza (400) y de 8 se acepta (200/202) | Valores límite | RF05 |
-| CP-A04 | `tests/api/topics-limites.spec.js` | Título de 256 caracteres se rechaza (400) y de 255 se acepta | Valores límite | RF05 |
-| CP-A05 | `tests/api/topics-limites.spec.js` | 5 etiquetas se aceptan y 6 se rechazan | Valores límite | RF06 |
-| CP-A06 | `tests/e2e/login.spec.js` | Login válido: sale de `/login` y `app.user.uid > 0` | Partición de equivalencia | RF02 |
-| CP-A07 | `tests/e2e/login.spec.js` | Login inválido: se muestra `#login-error-notify` y no hay sesión | Partición de equivalencia | RF02 |
-| CP-A08 | `tests/e2e/registro.spec.js` | Usuario de 1 y de 17 caracteres muestran error; usuario de 16 completa el registro | Valores límite | RF01 |
-| CP-A09 | `tests/e2e/admin-y-temas.spec.js` | Visitante sin sesión que abre `/admin` termina en `/login` | Tabla de decisión (R1) | RF11 |
-| CP-A10 | `tests/e2e/admin-y-temas.spec.js` | Login, crear un tema en el editor, verlo publicado y en `/recent` | Flujo E2E | RF05, RF07 |
-| Unitarias | `nodebb/NodeBB/test/utils.js`, `test/password.js` | 92 pruebas de utilidades y de hash de contraseñas | Caja blanca | RNF04 |
+| CP-A01 | `tests/api/api-config.spec.js` | `GET /api/config` responde 200 en JSON, en menos de 3 s, con token CSRF y los límites de configuración | Partición de equivalencia | RF03, RNF01 |
+| CP-A02 | `tests/api/api-config.spec.js` | `POST /api/v3/topics` sin sesión responde 401/403 y el tema no aparece en `/api/recent` | Partición de equivalencia | RF03, RNF02 |
+| CP-A03 | `tests/api/topics-limites.spec.js` | Contenido de 7 caracteres se rechaza (400) y de 8 se acepta (200/202) | Valores límite | RF03 |
+| CP-A04 | `tests/api/topics-limites.spec.js` | Título de 256 caracteres se rechaza (400) y de 255 se acepta | Valores límite | RF03 |
+| CP-A05 | `tests/api/topics-limites.spec.js` | 5 etiquetas se aceptan y 6 se rechazan | Valores límite | RF03 |
+| CP-A06 | `tests/e2e/login.spec.js` | Login válido: sale de `/login` y `app.user.uid > 0` | Partición de equivalencia | RF01 |
+| CP-A07 | `tests/e2e/login.spec.js` | Login inválido: se muestra `#login-error-notify` y no hay sesión | Partición de equivalencia | RF01 |
+| CP-A08 | `tests/e2e/registro.spec.js` | Usuario de 1 y de 17 caracteres muestran error; usuario de 16 completa el registro | Valores límite | RF05 |
+| CP-A09 | `tests/e2e/admin-y-temas.spec.js` | Visitante sin sesión que abre `/admin` termina en `/login` | Tabla de decisión (R1) | RNF02 |
+| CP-A10 | `tests/e2e/admin-y-temas.spec.js` | Login, crear un tema en el editor, verlo publicado y en `/recent` | Flujo E2E | RF03, RF02 |
+| Unitarias | `nodebb/NodeBB/test/utils.js`, `test/password.js` | 92 pruebas de utilidades y de hash de contraseñas | Caja blanca | RNF05 |
 
 ## 8.3 Resultados
 
@@ -73,8 +73,8 @@ Herramienta: k6 v2.3.0. Duración total: 2 minutos. Usuarios concurrentes: hasta
 | Tiempo mínimo | – | 15,48 ms | – |
 | Tiempo máximo | – | 442,36 ms | – |
 | Percentil 95 (p95) | < 3000 ms (RNF01) | 333,95 ms | Sí |
-| Tasa de errores | < 1 % (RNF02) | 0,00 % (0 de 3709) | Sí |
-| Errores 5xx | 0 (RNF03) | 0 | Sí |
+| Tasa de errores | < 1 % (complementario de RNF01) | 0,00 % (0 de 3709) | Sí |
+| Errores 5xx | 0 (complementario de RNF01) | 0 | Sí |
 | Throughput | – | 30,8 peticiones/s | – |
 
 **Interpretación.** Con 20 usuarios concurrentes, el p95 queda en 334 ms, unas 9 veces por debajo del umbral de 3 s, y no hubo errores. Las páginas que se renderizan en el servidor (`/` y `/recent`) son las más lentas; las rutas de API responden más rápido.
