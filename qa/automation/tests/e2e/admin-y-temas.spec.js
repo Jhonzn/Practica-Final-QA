@@ -3,7 +3,7 @@
 const { test, expect } = require('@playwright/test');
 const { ADMIN, loginUi } = require('../helpers');
 
-test('CP-A09 | Un visitante sin sesion no puede entrar a /admin y es enviado a /login (RF11)', async ({ page }) => {
+test('CP-A09 | Un visitante sin sesion no puede entrar a /admin y es enviado a /login (RNF02)', async ({ page }) => {
   const res = await page.goto('/admin');
   expect(res.status()).toBeLessThan(500);
   await expect(page).toHaveURL(/\/login/);
@@ -11,7 +11,7 @@ test('CP-A09 | Un visitante sin sesion no puede entrar a /admin y es enviado a /
   await page.screenshot({ path: 'reports/evidencias/CP-A09-admin-sin-sesion.png', fullPage: true });
 });
 
-test('CP-A10 | Crear un tema desde la interfaz y verlo publicado en /recent (RF05, RF07)', async ({ page }) => {
+test('CP-A10 | Crear un tema desde la interfaz y verlo publicado en /recent (RF03, RF02)', async ({ page }) => {
   const titulo = `Tema E2E Playwright ${Date.now()}`;
   await loginUi(page, ADMIN);
   await expect(page).not.toHaveURL(/\/login/);

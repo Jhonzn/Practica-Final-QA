@@ -1,4 +1,4 @@
-// CP-A08: valores limite de la longitud del nombre de usuario en el registro (RF01).
+// CP-A08: valores limite de la longitud del nombre de usuario en el registro (RF05).
 // Limites de NodeBB: minimo 2 y maximo 16 caracteres (install/data/defaults.json).
 const { test, expect } = require('@playwright/test');
 

@@ -46,7 +46,7 @@ test.describe('Creacion de temas: valores limite', () => {
     throw new Error('El usuario de prueba nunca pudo publicar (espera inicial).');
   }
 
-  test('CP-A03 | Contenido: 7 caracteres se rechaza y 8 caracteres se acepta (RF05)', async ({ playwright, request, baseURL }) => {
+  test('CP-A03 | Contenido: 7 caracteres se rechaza y 8 caracteres se acepta (RF03)', async ({ playwright, request, baseURL }) => {
     const { contexto, csrf } = await sesionUsuarioNormal(playwright, request, baseURL);
 
     const debajoDelLimite = await crearTema(contexto, csrf, { title: `Limite contenido 7 ${unique()}`, content: '1234567' });
@@ -61,7 +61,7 @@ test.describe('Creacion de temas: valores limite', () => {
     await contexto.dispose();
   });
 
-  test('CP-A04 | Titulo: 255 caracteres se acepta y 256 se rechaza (RF05)', async ({ playwright, request, baseURL }) => {
+  test('CP-A04 | Titulo: 255 caracteres se acepta y 256 se rechaza (RF03)', async ({ playwright, request, baseURL }) => {
     const { contexto, csrf } = await sesionUsuarioNormal(playwright, request, baseURL);
     const base = `T${unique()}`;
     const titulo255 = base.padEnd(255, 'a');
@@ -81,7 +81,7 @@ test.describe('Creacion de temas: valores limite', () => {
     await contexto.dispose();
   });
 
-  test('CP-A05 | Etiquetas: 5 se aceptan y 6 se rechazan (RF06)', async ({ request }) => {
+  test('CP-A05 | Etiquetas: 5 se aceptan y 6 se rechazan (RF03)', async ({ request }) => {
     const csrf = await loginApi(request); // el limite de etiquetas aplica tambien al administrador
     cid = await firstCategoryId(request);
     const u = unique().slice(-6);

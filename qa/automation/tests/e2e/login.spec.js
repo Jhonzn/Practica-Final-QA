@@ -4,7 +4,7 @@ const { test, expect } = require('@playwright/test');
 const { ADMIN, loginUi } = require('../helpers');
 
 test.describe('Inicio de sesion', () => {
-  test('CP-A06 | Login con credenciales validas lleva al inicio con la sesion iniciada (RF02)', async ({ page }) => {
+  test('CP-A06 | Login con credenciales validas lleva al inicio con la sesion iniciada (RF01)', async ({ page }) => {
     await loginUi(page, ADMIN);
 
     await expect(page).not.toHaveURL(/\/login/);
@@ -14,8 +14,8 @@ test.describe('Inicio de sesion', () => {
     await page.screenshot({ path: 'reports/evidencias/CP-A06-login-valido.png', fullPage: true });
   });
 
-  test('CP-A07 | Login con contrasena incorrecta muestra un error y no inicia sesion (RF02)', async ({ page }) => {
-    // Usuario inexistente para no sumar intentos fallidos al administrador (bloqueo tras 5 intentos, RF03)
+  test('CP-A07 | Login con contrasena incorrecta muestra un error y no inicia sesion (RF01)', async ({ page }) => {
+    // Usuario inexistente para no sumar intentos fallidos al administrador (bloqueo tras 5 intentos, RNF02)
     await loginUi(page, { username: `noexiste${Date.now()}`, password: 'ContrasenaIncorrecta1' });
 
     const error = page.locator('#login-error-notify');
